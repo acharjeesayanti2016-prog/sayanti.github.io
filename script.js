@@ -1,21 +1,16 @@
 /* =========================================================
-   SAYANTI ACHARJEE — PORTFOLIO JAVASCRIPT
+   SAYANTI ACHARJEE PORTFOLIO
+   FINAL JAVASCRIPT
    ========================================================= */
 
 
-/* =========================================================
-   PROJECT DATA
-   ========================================================= */
+/* ================= PROJECT DATA ================= */
 
 const projects = {
 
   "missed-contact": {
 
-    number: "PROJECT / 01",
-
     type: "AUTOMATION",
-
-    eyebrow: "OPERATIONAL AUTOMATION",
 
     title: "Missed Seller Contact Reduction",
 
@@ -24,29 +19,26 @@ const projects = {
 
     metric: "89%",
 
-    metricLabel:
-      "reduction in missed seller contacts",
+    metricLabel: "reduction in missed seller contacts",
 
     problem:
-      "Repetitive workflow steps created visibility gaps and increased the likelihood of missed seller contacts. The process required associates to repeatedly monitor and act on information manually.",
+      "Repetitive workflow steps created visibility gaps and increased the likelihood of missed seller contacts.",
 
     data:
       "Reviewed operational patterns, contact workflows and recurring failure points to identify where manual intervention was creating unnecessary risk.",
 
     analysis:
-      "The analysis showed that repetitive manual workflow steps were contributing to missed actions. The opportunity was to surface important information earlier and reduce unnecessary manual effort.",
+      "The analysis showed that repetitive manual workflow steps were contributing to missed actions and that important information needed to be surfaced earlier.",
 
     solution:
-      "Developed a lightweight browser automation workflow using Tampermonkey and JavaScript to surface relevant information and make the workflow easier to monitor.",
+      "Developed a lightweight browser automation workflow using Tampermonkey and JavaScript to surface relevant information and reduce manual effort.",
 
     impact:
-      "The automation significantly reduced missed seller contacts while improving workflow visibility and consistency.",
+      "The solution significantly reduced missed seller contacts while improving workflow visibility and consistency.",
 
-    impactNumber: "89%",
+    impactValue: "89%",
 
-    impactLabel: "reduction",
-
-    impactWidth: "89",
+    impactWidth: "89%",
 
     tools: [
       "Tampermonkey",
@@ -66,11 +58,7 @@ const projects = {
 
   "productivity": {
 
-    number: "PROJECT / 02",
-
     type: "ANALYTICS",
-
-    eyebrow: "PERFORMANCE ANALYTICS",
 
     title: "Productivity Analytics Dashboard",
 
@@ -79,8 +67,7 @@ const projects = {
 
     metric: "25%",
 
-    metricLabel:
-      "productivity improvement",
+    metricLabel: "productivity improvement",
 
     problem:
       "Performance information was distributed across multiple data sources, making it difficult to quickly identify productivity trends and performance gaps.",
@@ -97,11 +84,9 @@ const projects = {
     impact:
       "The dashboard improved performance visibility and contributed to a 25% improvement in associate productivity.",
 
-    impactNumber: "25%",
+    impactValue: "25%",
 
-    impactLabel: "productivity gain",
-
-    impactWidth: "25",
+    impactWidth: "25%",
 
     tools: [
       "Power Query",
@@ -122,53 +107,46 @@ const projects = {
 
   "image-audit": {
 
-    number: "PROJECT / 03",
-
     type: "QUALITY",
 
-    eyebrow: "IMAGE AUTOMATION AUDIT",
-
-    title: "Quality & Root Cause Analysis",
+    title: "Image Automation Audit",
 
     description:
       "Audited more than 1,200 cases to identify recurring automation and workflow errors while partnering with Product, Tech, Security and Operations teams.",
 
     metric: "98.2%",
 
-    metricLabel:
-      "post-audit accuracy",
+    metricLabel: "post-audit accuracy",
 
     problem:
       "Recurring automation-related errors were creating quality issues, unnecessary work and aging cases.",
 
     data:
-      "Audited 1,200+ cases over multiple months, focusing on recurring error codes including 5665 and 5461.",
+      "Audited 1,200+ cases over multiple months, focusing on recurring error patterns including 5665 and 5461.",
 
     analysis:
-      "Segmented the cases to identify recurring patterns, error sources and workflow gaps. The analysis helped distinguish process issues from technology and automation issues.",
+      "Segmented cases to identify recurring patterns, error sources and workflow gaps while distinguishing process issues from technology issues.",
 
     solution:
-      "Created a structured audit approach and collaborated with Product, Technology, Security and Operations stakeholders to address the identified failure points.",
+      "Created a structured audit approach and collaborated with Product, Technology, Security and Operations stakeholders to address identified failure points.",
 
     impact:
       "Achieved 98.2% accuracy after the audit while contributing to a 50.07% reduction in NRR and reducing NVA from 8.25% to 4.4%.",
 
-    impactNumber: "98.2%",
+    impactValue: "98.2%",
 
-    impactLabel: "audit accuracy",
-
-    impactWidth: "98",
+    impactWidth: "98%",
 
     tools: [
       "Excel",
       "Data Analysis",
       "Quality Audit",
-      "Root Cause Analysis"
+      "RCA"
     ],
 
     capabilities: [
       "Quality Management",
-      "RCA",
+      "Root Cause Analysis",
       "Cross-functional Collaboration"
     ]
 
@@ -177,11 +155,7 @@ const projects = {
 
   "nrr": {
 
-    number: "PROJECT / 04",
-
     type: "PROCESS",
-
-    eyebrow: "SELLER APPEAL / BRAND PROTECTION",
 
     title: "NRR Reduction",
 
@@ -190,17 +164,16 @@ const projects = {
 
     metric: "50%",
 
-    metricLabel:
-      "NRR reduction through audit",
+    metricLabel: "NRR reduction",
 
     problem:
       "Repeat contacts were creating additional workload and negatively affecting operational efficiency.",
 
     data:
-      "Analyzed operational case data, repeat contact patterns, transfer behavior and resolution trends to identify the major drivers of NRR.",
+      "Analyzed operational case data, repeat contact patterns, transfer behavior and resolution trends to identify major drivers of NRR.",
 
     analysis:
-      "Identified recurring process gaps and opportunities to improve first-time resolution by addressing the underlying reason for repeat contacts.",
+      "Identified recurring process gaps and opportunities to improve first-time resolution by addressing underlying reasons for repeat contacts.",
 
     solution:
       "Used structured root-cause analysis, process optimization and SOP improvements to address recurring failure points.",
@@ -208,11 +181,9 @@ const projects = {
     impact:
       "The initiative contributed to a significant reduction in repeat contacts and improved overall resolution efficiency.",
 
-    impactNumber: "50%",
+    impactValue: "50%",
 
-    impactLabel: "NRR reduction",
-
-    impactWidth: "50",
+    impactWidth: "50%",
 
     tools: [
       "Excel",
@@ -232,11 +203,7 @@ const projects = {
 
   "training": {
 
-    number: "PROJECT / 05",
-
     type: "TRAINING",
-
-    eyebrow: "LEARNING & DEVELOPMENT",
 
     title: "Training Enablement",
 
@@ -245,8 +212,7 @@ const projects = {
 
     metric: "118+",
 
-    metricLabel:
-      "associates trained",
+    metricLabel: "associates trained",
 
     problem:
       "Associates needed structured training and practical guidance to perform complex seller support and Brand Protection workflows accurately.",
@@ -263,11 +229,9 @@ const projects = {
     impact:
       "Trained more than 118 associates across multiple batches while maintaining strong quality and operational performance.",
 
-    impactNumber: "118+",
+    impactValue: "118+",
 
-    impactLabel: "associates trained",
-
-    impactWidth: "88",
+    impactWidth: "88%",
 
     tools: [
       "Training",
@@ -287,327 +251,182 @@ const projects = {
 };
 
 
-/* =========================================================
-   DOM ELEMENTS
-   ========================================================= */
+/* ================= DOM ================= */
 
-const modal = document.getElementById("caseModal");
-
-const modalBackdrop =
-  document.getElementById("modalBackdrop");
+const modal =
+  document.getElementById("caseModal");
 
 const modalClose =
   document.getElementById("modalClose");
 
+const modalBackdrop =
+  document.getElementById("modalBackdrop");
 
-/* =========================================================
-   MODAL ELEMENTS
-   ========================================================= */
 
-const caseNumber =
-  document.getElementById("caseNumber");
+/* ================= MODAL ELEMENTS ================= */
 
-const caseType =
-  document.getElementById("caseType");
+const modalType =
+  document.getElementById("modalType");
 
-const caseEyebrow =
-  document.getElementById("caseEyebrow");
+const modalTitle =
+  document.getElementById("modalTitle");
 
-const caseTitle =
-  document.getElementById("caseTitle");
+const modalDescription =
+  document.getElementById("modalDescription");
 
-const caseDescription =
-  document.getElementById("caseDescription");
+const modalMetric =
+  document.getElementById("modalMetric");
 
-const caseMetric =
-  document.getElementById("caseMetric");
+const modalMetricLabel =
+  document.getElementById("modalMetricLabel");
 
-const caseMetricLabel =
-  document.getElementById("caseMetricLabel");
+const modalProblem =
+  document.getElementById("modalProblem");
 
-const caseProblem =
-  document.getElementById("caseProblem");
+const modalData =
+  document.getElementById("modalData");
 
-const caseData =
-  document.getElementById("caseData");
+const modalAnalysis =
+  document.getElementById("modalAnalysis");
 
-const caseAnalysis =
-  document.getElementById("caseAnalysis");
+const modalSolution =
+  document.getElementById("modalSolution");
 
-const caseSolution =
-  document.getElementById("caseSolution");
+const modalImpact =
+  document.getElementById("modalImpact");
 
-const caseImpact =
-  document.getElementById("caseImpact");
-
-const impactNumber =
-  document.getElementById("impactNumber");
-
-const impactLabel =
-  document.getElementById("impactLabel");
+const impactValue =
+  document.getElementById("impactValue");
 
 const impactBar =
   document.getElementById("impactBar");
 
-const caseTools =
-  document.getElementById("caseTools");
+const modalTools =
+  document.getElementById("modalTools");
 
-const caseCapabilities =
-  document.getElementById("caseCapabilities");
-
-
-/* =========================================================
-   OPEN PROJECT MODAL
-   ========================================================= */
-
-function openProject(projectId) {
-
-  const project = projects[projectId];
-
-  if (!project) {
-
-    console.error(
-      "Project not found:",
-      projectId
-    );
-
-    return;
-
-  }
+const modalCapabilities =
+  document.getElementById("modalCapabilities");
 
 
-  /* ---------------------------------------------
-     BASIC PROJECT INFORMATION
-     --------------------------------------------- */
+/* ================= OPEN MODAL ================= */
 
-  caseNumber.textContent =
-    project.number;
+function openProject(id) {
 
-  caseType.textContent =
+  const project = projects[id];
+
+  if (!project) return;
+
+
+  modalType.textContent =
     project.type;
 
-  caseEyebrow.textContent =
-    project.eyebrow;
-
-  caseTitle.textContent =
+  modalTitle.textContent =
     project.title;
 
-  caseDescription.textContent =
+  modalDescription.textContent =
     project.description;
 
-
-  /* ---------------------------------------------
-     HERO METRIC
-     --------------------------------------------- */
-
-  caseMetric.textContent =
+  modalMetric.textContent =
     project.metric;
 
-  caseMetricLabel.textContent =
+  modalMetricLabel.textContent =
     project.metricLabel;
 
-
-  /* ---------------------------------------------
-     CASE STUDY PROCESS
-     --------------------------------------------- */
-
-  caseProblem.textContent =
+  modalProblem.textContent =
     project.problem;
 
-  caseData.textContent =
+  modalData.textContent =
     project.data;
 
-  caseAnalysis.textContent =
+  modalAnalysis.textContent =
     project.analysis;
 
-  caseSolution.textContent =
+  modalSolution.textContent =
     project.solution;
 
-  caseImpact.textContent =
+  modalImpact.textContent =
     project.impact;
 
-
-  /* ---------------------------------------------
-     IMPACT METRIC
-     --------------------------------------------- */
-
-  impactNumber.textContent =
-    project.impactNumber;
-
-  impactLabel.textContent =
-    project.impactLabel;
+  impactValue.textContent =
+    project.impactValue;
 
 
-  /* ---------------------------------------------
-     IMPACT BAR
-     --------------------------------------------- */
+  /* Tools */
 
-  impactBar.style.setProperty(
-    "--impact-width",
-    `${project.impactWidth}%`
-  );
+  modalTools.innerHTML = "";
 
+  project.tools.forEach(tool => {
 
-  /* ---------------------------------------------
-     TOOLS
-     --------------------------------------------- */
-
-  caseTools.innerHTML = "";
-
-  project.tools.forEach(function(tool) {
-
-    const tag =
+    const span =
       document.createElement("span");
 
-    tag.textContent = tool;
+    span.textContent = tool;
 
-    caseTools.appendChild(tag);
+    modalTools.appendChild(span);
 
   });
 
 
-  /* ---------------------------------------------
-     CAPABILITIES
-     --------------------------------------------- */
+  /* Capabilities */
 
-  caseCapabilities.innerHTML = "";
+  modalCapabilities.innerHTML = "";
 
-  project.capabilities.forEach(
-    function(capability) {
+  project.capabilities.forEach(item => {
 
-      const tag =
-        document.createElement("span");
+    const span =
+      document.createElement("span");
 
-      tag.textContent =
-        capability;
+    span.textContent = item;
 
-      caseCapabilities.appendChild(tag);
+    modalCapabilities.appendChild(span);
 
-    }
-  );
+  });
 
-
-  /* ---------------------------------------------
-     SHOW MODAL
-     --------------------------------------------- */
 
   modal.classList.add("active");
 
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  document.body.classList.add("modal-open");
 
 
-  /* Prevent background scrolling */
-
-  document.body.classList.add(
-    "modal-open"
-  );
+  impactBar.style.width = "0";
 
 
-  /* Start animation */
+  setTimeout(() => {
 
-  setTimeout(function() {
+    impactBar.style.width =
+      project.impactWidth;
 
-    impactBar.classList.add(
-      "animate"
-    );
-
-  }, 250);
+  }, 200);
 
 }
 
 
-/* =========================================================
-   CLOSE PROJECT MODAL
-   ========================================================= */
+/* ================= CLOSE MODAL ================= */
 
 function closeProject() {
 
-  modal.classList.remove(
-    "active"
-  );
+  modal.classList.remove("active");
 
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.body.classList.remove(
-    "modal-open"
-  );
-
-
-  impactBar.classList.remove(
-    "animate"
-  );
+  document.body.classList.remove("modal-open");
 
 }
 
 
-/* =========================================================
-   PROJECT BUTTONS
-   ========================================================= */
-
-const projectButtons =
-  document.querySelectorAll(
-    ".showcase-button"
-  );
-
-
-projectButtons.forEach(
-  function(button) {
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        const projectId =
-          button.getAttribute(
-            "data-project"
-          );
-
-        openProject(projectId);
-
-      }
-    );
-
-  }
+modalClose.addEventListener(
+  "click",
+  closeProject
 );
 
 
-/* =========================================================
-   CLOSE MODAL EVENTS
-   ========================================================= */
+modalBackdrop.addEventListener(
+  "click",
+  closeProject
+);
 
-if (modalClose) {
-
-  modalClose.addEventListener(
-    "click",
-    closeProject
-  );
-
-}
-
-
-if (modalBackdrop) {
-
-  modalBackdrop.addEventListener(
-    "click",
-    closeProject
-  );
-
-}
-
-
-/* =========================================================
-   ESCAPE KEY
-   ========================================================= */
 
 document.addEventListener(
   "keydown",
-  function(event) {
+  event => {
 
     if (
       event.key === "Escape" &&
@@ -622,486 +441,323 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
+/* ================= PROJECT BUTTONS ================= */
 
-const navMenu =
-  document.getElementById(
-    "navMenu"
-  );
+document
+  .querySelectorAll(".case-study-btn")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        openProject(
+          button.dataset.project
+        );
+
+      }
+    );
+
+  });
+
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
 
 const navLinks =
-  document.getElementById(
-    "navLinks"
-  );
+  document.getElementById("navLinks");
 
 
-if (navMenu && navLinks) {
+menuBtn.addEventListener(
+  "click",
+  () => {
 
-  navMenu.addEventListener(
-    "click",
-    function() {
+    navLinks.classList.toggle("active");
 
-      navLinks.classList.toggle(
-        "active"
-      );
-
-      navMenu.classList.toggle(
-        "active"
-      );
-
-    }
-  );
+  }
+);
 
 
-  /* Close mobile navigation
-     after clicking a link */
+navLinks
+  .querySelectorAll("a")
+  .forEach(link => {
 
-  navLinks
-    .querySelectorAll("a")
-    .forEach(function(link) {
+    link.addEventListener(
+      "click",
+      () => {
 
-      link.addEventListener(
-        "click",
-        function() {
+        navLinks.classList.remove("active");
 
-          navLinks.classList.remove(
-            "active"
-          );
+      }
+    );
 
-          navMenu.classList.remove(
-            "active"
-          );
-
-        }
-      );
-
-    });
-
-}
+  });
 
 
-/* =========================================================
-   NAVBAR SCROLL EFFECT
-   ========================================================= */
+/* ================= NAVBAR ================= */
 
 const navbar =
-  document.getElementById(
-    "navbar"
-  );
-
-
-function updateNavbar() {
-
-  if (!navbar) {
-    return;
-  }
-
-
-  if (window.scrollY > 40) {
-
-    navbar.classList.add(
-      "scrolled"
-    );
-
-  } else {
-
-    navbar.classList.remove(
-      "scrolled"
-    );
-
-  }
-
-}
+  document.getElementById("navbar");
 
 
 window.addEventListener(
   "scroll",
-  updateNavbar
+  () => {
+
+    if (window.scrollY > 50) {
+
+      navbar.classList.add("scrolled");
+
+    } else {
+
+      navbar.classList.remove("scrolled");
+
+    }
+
+  }
 );
 
 
-updateNavbar();
-
-
-/* =========================================================
-   ACTIVE NAVIGATION LINK
-   ========================================================= */
-
-const sections =
-  document.querySelectorAll(
-    "section[id]"
-  );
-
-const navigationLinks =
-  document.querySelectorAll(
-    ".nav-links a"
-  );
-
-
-function updateActiveNavigation() {
-
-  let currentSection = "";
-
-
-  sections.forEach(
-    function(section) {
-
-      const sectionTop =
-        section.offsetTop - 180;
-
-      const sectionHeight =
-        section.offsetHeight;
-
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY <
-          sectionTop + sectionHeight
-      ) {
-
-        currentSection =
-          section.getAttribute(
-            "id"
-          );
-
-      }
-
-    }
-  );
-
-
-  navigationLinks.forEach(
-    function(link) {
-
-      link.classList.remove(
-        "active"
-      );
-
-
-      const href =
-        link.getAttribute(
-          "href"
-        );
-
-
-      if (
-        href === `#${currentSection}`
-      ) {
-
-        link.classList.add(
-          "active"
-        );
-
-      }
-
-    }
-  );
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateActiveNavigation
-);
-
-
-updateActiveNavigation();
-
-
-/* =========================================================
-   SCROLL REVEAL ANIMATION
-   ========================================================= */
+/* ================= SCROLL REVEAL ================= */
 
 const revealElements =
-  document.querySelectorAll(
-    ".reveal"
-  );
+  document.querySelectorAll(".reveal");
 
 
 const revealObserver =
   new IntersectionObserver(
-    function(entries) {
+    entries => {
 
-      entries.forEach(
-        function(entry) {
+      entries.forEach(entry => {
 
-          if (
-            entry.isIntersecting
-          ) {
+        if (entry.isIntersecting) {
 
-            entry.target.classList.add(
-              "visible"
-            );
+          entry.target.classList.add(
+            "visible"
+          );
 
-            revealObserver.unobserve(
-              entry.target
-            );
-
-          }
+          revealObserver.unobserve(
+            entry.target
+          );
 
         }
-      );
+
+      });
 
     },
     {
-      threshold: 0.12,
-
-      rootMargin:
-        "0px 0px -50px 0px"
+      threshold: .12
     }
   );
 
 
-revealElements.forEach(
-  function(element) {
+revealElements.forEach(element => {
 
-    revealObserver.observe(
-      element
-    );
+  revealObserver.observe(element);
 
-  }
-);
+});
 
 
-/* =========================================================
-   STAGGER CARD ANIMATIONS
-   ========================================================= */
+/* ================= ACTIVE NAV ================= */
 
-const cardGroups = [
-  ".skill-card",
-  ".showcase-card",
-  ".recognition-card",
-  ".education-item"
-];
+const sections =
+  document.querySelectorAll("section[id]");
+
+const navItems =
+  document.querySelectorAll(".nav-links a");
 
 
-cardGroups.forEach(
-  function(selector) {
+window.addEventListener(
+  "scroll",
+  () => {
 
-    const cards =
-      document.querySelectorAll(
-        selector
-      );
+    let current = "";
 
+    sections.forEach(section => {
 
-    cards.forEach(
-      function(card, index) {
+      const top =
+        section.offsetTop - 180;
 
-        card.style.transitionDelay =
-          `${index * 80}ms`;
+      if (
+        window.scrollY >= top
+      ) {
+
+        current =
+          section.id;
 
       }
-    );
+
+    });
+
+
+    navItems.forEach(link => {
+
+      link.classList.remove("active");
+
+      if (
+        link.getAttribute("href") ===
+        `#${current}`
+      ) {
+
+        link.classList.add("active");
+
+      }
+
+    });
 
   }
 );
 
 
-/* =========================================================
-   SMOOTH SCROLL
-   ========================================================= */
+/* ================= HERO COUNTERS ================= */
 
-document
-  .querySelectorAll(
-    'a[href^="#"]'
-  )
-  .forEach(
-    function(anchor) {
+let countersStarted = false;
 
-      anchor.addEventListener(
-        "click",
-        function(event) {
-
-          const targetId =
-            anchor.getAttribute(
-              "href"
-            );
+const hero =
+  document.querySelector(".hero");
 
 
-          if (
-            !targetId ||
-            targetId === "#"
-          ) {
+const counterObserver =
+  new IntersectionObserver(
+    entries => {
 
-            return;
+      entries.forEach(entry => {
 
-          }
+        if (
+          entry.isIntersecting &&
+          !countersStarted
+        ) {
+
+          countersStarted = true;
+
+          document
+            .querySelectorAll(
+              ".hero-stats strong"
+            )
+            .forEach(element => {
+
+              const original =
+                element.textContent;
+
+              const target =
+                parseFloat(
+                  element.dataset.count
+                );
+
+              const hasDecimal =
+                original.includes(".");
+
+              const suffix =
+                original.includes("%")
+                  ? "%"
+                  : "+";
+
+              let start = 0;
+
+              const duration = 1000;
+
+              const startTime =
+                performance.now();
 
 
-          const target =
-            document.querySelector(
-              targetId
-            );
+              function update(time) {
+
+                const progress =
+                  Math.min(
+                    (time - startTime) /
+                    duration,
+                    1
+                  );
 
 
-          if (!target) {
-
-            return;
-
-          }
-
-
-          event.preventDefault();
+                const eased =
+                  1 -
+                  Math.pow(
+                    1 - progress,
+                    3
+                  );
 
 
-          const navbarHeight =
-            navbar
-              ? navbar.offsetHeight
-              : 0;
+                const value =
+                  start +
+                  (target - start) *
+                  eased;
 
 
-          const targetPosition =
-            target.offsetTop -
-            navbarHeight;
+                element.textContent =
+                  `${hasDecimal
+                    ? value.toFixed(1)
+                    : Math.round(value)
+                  }${suffix}`;
 
 
-          window.scrollTo({
+                if (progress < 1) {
 
-            top: targetPosition,
+                  requestAnimationFrame(
+                    update
+                  );
 
-            behavior: "smooth"
+                }
 
-          });
+              }
+
+
+              requestAnimationFrame(
+                update
+              );
+
+            });
 
         }
-      );
+
+      });
 
     }
   );
 
 
-/* =========================================================
-   CURSOR GLOW
-   ========================================================= */
-
-const cursorGlow =
-  document.querySelector(
-    ".cursor-glow"
-  );
+counterObserver.observe(hero);
 
 
-if (cursorGlow) {
+/* ================= PROJECT CARD EFFECT ================= */
 
-  let mouseX = 0;
-
-  let mouseY = 0;
-
-  let currentX = 0;
-
-  let currentY = 0;
-
-
-  document.addEventListener(
-    "mousemove",
-    function(event) {
-
-      mouseX =
-        event.clientX;
-
-      mouseY =
-        event.clientY;
-
-    }
-  );
-
-
-  function animateCursor() {
-
-    currentX +=
-      (mouseX - currentX) *
-      0.12;
-
-    currentY +=
-      (mouseY - currentY) *
-      0.12;
-
-
-    cursorGlow.style.transform =
-      `translate3d(${currentX}px, ${currentY}px, 0)`;
-
-
-    requestAnimationFrame(
-      animateCursor
-    );
-
-  }
-
-
-  animateCursor();
-
-}
-
-
-/* =========================================================
-   CARD MOUSE MOVEMENT
-   Subtle interactive tilt
-   ========================================================= */
-
-const interactiveCards =
-  document.querySelectorAll(
-    ".skill-card, .showcase-card"
-  );
-
-
-interactiveCards.forEach(
-  function(card) {
+document
+  .querySelectorAll(".project-card")
+  .forEach(card => {
 
     card.addEventListener(
       "mousemove",
-      function(event) {
+      event => {
 
-        /* Disable tilt on small screens */
-
-        if (
-          window.innerWidth < 900
-        ) {
-
+        if (window.innerWidth < 900)
           return;
-
-        }
 
 
         const rect =
           card.getBoundingClientRect();
 
-
         const x =
-          event.clientX -
-          rect.left;
-
+          event.clientX - rect.left;
 
         const y =
-          event.clientY -
-          rect.top;
-
-
-        const centerX =
-          rect.width / 2;
-
-
-        const centerY =
-          rect.height / 2;
-
-
-        const rotateX =
-          ((y - centerY) /
-            centerY) *
-          -2;
-
+          event.clientY - rect.top;
 
         const rotateY =
-          ((x - centerX) /
-            centerX) *
-          2;
+          ((x - rect.width / 2) /
+            rect.width) * 3;
+
+        const rotateX =
+          ((y - rect.height / 2) /
+            rect.height) * -3;
 
 
         card.style.transform =
-          `perspective(1000px)
+          `perspective(1200px)
            rotateX(${rotateX}deg)
            rotateY(${rotateY}deg)
-           translateY(-5px)`;
+           translateY(-6px)`;
 
       }
     );
@@ -1109,411 +765,40 @@ interactiveCards.forEach(
 
     card.addEventListener(
       "mouseleave",
-      function() {
+      () => {
 
-        card.style.transform =
-          "";
+        card.style.transform = "";
 
       }
     );
 
-  }
-);
+  });
 
 
-/* =========================================================
-   HERO PARALLAX
-   ========================================================= */
+/* ================= KEYBOARD ACCESSIBILITY ================= */
 
-const heroGrid =
-  document.querySelector(
-    ".hero-grid"
-  );
-
-
-if (heroGrid) {
-
-  window.addEventListener(
-    "scroll",
-    function() {
-
-      const scrollPosition =
-        window.scrollY;
-
-
-      if (
-        scrollPosition <
-        window.innerHeight
-      ) {
-
-        heroGrid.style.transform =
-          `translateY(${scrollPosition * 0.15}px)`;
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   NUMBER COUNTER
-   ========================================================= */
-
-function animateCounter(
-  element,
-  target,
-  suffix = "",
-  duration = 1200
-) {
-
-  if (!element) {
-    return;
-  }
-
-
-  const startTime =
-    performance.now();
-
-
-  function updateCounter(
-    currentTime
-  ) {
-
-    const elapsed =
-      currentTime -
-      startTime;
-
-
-    const progress =
-      Math.min(
-        elapsed / duration,
-        1
-      );
-
-
-    /* Ease out */
-
-    const easedProgress =
-      1 -
-      Math.pow(
-        1 - progress,
-        3
-      );
-
-
-    const currentValue =
-      target *
-      easedProgress;
-
-
-    element.textContent =
-      `${currentValue.toFixed(
-        target % 1 === 0
-          ? 0
-          : 1
-      )}${suffix}`;
-
+document.addEventListener(
+  "keydown",
+  event => {
 
     if (
-      progress < 1
+      event.key === "Escape" &&
+      navLinks.classList.contains("active")
     ) {
 
-      requestAnimationFrame(
-        updateCounter
-      );
+      navLinks.classList.remove("active");
 
     }
 
   }
-
-
-  requestAnimationFrame(
-    updateCounter
-  );
-
-}
-
-
-/* =========================================================
-   INITIALIZE HERO COUNTERS
-   ========================================================= */
-
-let countersStarted = false;
-
-
-const heroSection =
-  document.querySelector(
-    ".hero"
-  );
-
-
-if (heroSection) {
-
-  const counterObserver =
-    new IntersectionObserver(
-      function(entries) {
-
-        entries.forEach(
-          function(entry) {
-
-            if (
-              entry.isIntersecting &&
-              !countersStarted
-            ) {
-
-              countersStarted =
-                true;
-
-
-              const counters =
-                document.querySelectorAll(
-                  ".hero-meta-item strong"
-                );
-
-
-              /* Experience */
-
-              if (counters[0]) {
-
-                animateCounter(
-                  counters[0],
-                  5,
-                  "+"
-                );
-
-              }
-
-
-              /* Associates */
-
-              if (counters[1]) {
-
-                animateCounter(
-                  counters[1],
-                  118,
-                  "+"
-                );
-
-              }
-
-
-              /* Accuracy */
-
-              if (counters[2]) {
-
-                animateCounter(
-                  counters[2],
-                  98.2,
-                  "%"
-                );
-
-              }
-
-
-              /* Productivity */
-
-              if (counters[3]) {
-
-                animateCounter(
-                  counters[3],
-                  25,
-                  "%"
-                );
-
-              }
-
-
-              counterObserver.unobserve(
-                heroSection
-              );
-
-            }
-
-          }
-        );
-
-      },
-      {
-        threshold: 0.4
-      }
-    );
-
-
-  counterObserver.observe(
-    heroSection
-  );
-
-}
-
-
-/* =========================================================
-   PROJECT HOVER TEXT EFFECT
-   ========================================================= */
-
-const showcaseCards =
-  document.querySelectorAll(
-    ".showcase-card"
-  );
-
-
-showcaseCards.forEach(
-  function(card) {
-
-    card.addEventListener(
-      "mouseenter",
-      function() {
-
-        card.classList.add(
-          "is-hovered"
-        );
-
-      }
-    );
-
-
-    card.addEventListener(
-      "mouseleave",
-      function() {
-
-        card.classList.remove(
-          "is-hovered"
-        );
-
-      }
-    );
-
-  }
 );
 
 
-/* =========================================================
-   MODAL BODY FOCUS
-   ========================================================= */
-
-function focusModal() {
-
-  if (
-    modal &&
-    modal.classList.contains(
-      "active"
-    )
-  ) {
-
-    setTimeout(
-      function() {
-
-        if (modalClose) {
-
-          modalClose.focus();
-
-        }
-
-      },
-      100
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   UPDATE OPEN PROJECT FUNCTION
-   ========================================================= */
-
-const originalOpenProject =
-  openProject;
-
-
-/* =========================================================
-   REDUCED MOTION SUPPORT
-   ========================================================= */
-
-const prefersReducedMotion =
-  window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
-
-
-if (
-  prefersReducedMotion.matches
-) {
-
-  document.documentElement.classList.add(
-    "reduce-motion"
-  );
-
-}
-
-
-/* =========================================================
-   IMAGE LAZY LOADING
-   ========================================================= */
-
-document
-  .querySelectorAll(
-    "img"
-  )
-  .forEach(
-    function(image) {
-
-      image.loading =
-        "lazy";
-
-    }
-  );
-
-
-/* =========================================================
-   CURRENT YEAR
-   ========================================================= */
-
-const footer =
-  document.querySelector(
-    ".footer"
-  );
-
-
-if (footer) {
-
-  const year =
-    new Date().getFullYear();
-
-
-  footer.innerHTML =
-    footer.innerHTML.replace(
-      /2026/g,
-      year
-    );
-
-}
-
-
-/* =========================================================
-   CONSOLE MESSAGE
-   ========================================================= */
-
-console.log(
-  "%cSayanti Acharjee — Portfolio",
-  "font-size:18px;font-weight:bold;"
-);
-
-
-console.log(
-  "%cAnalytics × Operations × Impact",
-  "font-size:13px;"
-);
-
-
-/* =========================================================
-   PAGE READY
-   ========================================================= */
+/* ================= PAGE READY ================= */
 
 document.addEventListener(
   "DOMContentLoaded",
-  function() {
+  () => {
 
     document.body.classList.add(
       "page-loaded"
