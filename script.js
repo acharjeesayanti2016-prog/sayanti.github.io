@@ -1,509 +1,1523 @@
-const $ = (s) => document.querySelector(s);
-const $$ = (s) => document.querySelectorAll(s);
-
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
-
-const menu = $("#menu-toggle");
-const nav = $("#nav");
-
-menu?.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-
-$$("nav a").forEach((a) => {
-  a.addEventListener("click", () => {
-    nav.classList.remove("open");
-  });
-});
+/* =========================================================
+   SAYANTI ACHARJEE — PORTFOLIO JAVASCRIPT
+   ========================================================= */
 
 
-/* =========================================
-   DARK / LIGHT MODE
-========================================= */
+/* =========================================================
+   PROJECT DATA
+   ========================================================= */
 
-const theme = $("#theme-toggle");
+const projects = {
 
-const savedTheme = localStorage.getItem("sayanti-theme");
+  "missed-contact": {
 
-if (savedTheme === "light") {
-  document.body.classList.add("light");
-  if (theme) theme.textContent = "☾";
-}
+    number: "PROJECT / 01",
 
-theme?.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+    type: "AUTOMATION",
 
-  const isLight = document.body.classList.contains("light");
+    eyebrow: "OPERATIONAL AUTOMATION",
 
-  localStorage.setItem(
-    "sayanti-theme",
-    isLight ? "light" : "dark"
-  );
+    title: "Missed Seller Contact Reduction",
 
-  theme.textContent = isLight ? "☾" : "☼";
-});
+    description:
+      "Identified repetitive workflow gaps and developed a lightweight automation solution to improve visibility and reduce missed seller contacts.",
 
+    metric: "89%",
 
-/* =========================================
-   CURSOR GLOW EFFECT
-========================================= */
+    metricLabel:
+      "reduction in missed seller contacts",
 
-const glow = $(".cursor-glow");
+    problem:
+      "Repetitive workflow steps created visibility gaps and increased the likelihood of missed seller contacts. The process required associates to repeatedly monitor and act on information manually.",
 
-document.addEventListener("mousemove", (e) => {
-  if (window.innerWidth > 850 && glow) {
-    glow.style.left = `${e.clientX}px`;
-    glow.style.top = `${e.clientY}px`;
-  }
-});
+    data:
+      "Reviewed operational patterns, contact workflows and recurring failure points to identify where manual intervention was creating unnecessary risk.",
 
+    analysis:
+      "The analysis showed that repetitive manual workflow steps were contributing to missed actions. The opportunity was to surface important information earlier and reduce unnecessary manual effort.",
 
-/* =========================================
-   SCROLL REVEAL ANIMATIONS
-========================================= */
+    solution:
+      "Developed a lightweight browser automation workflow using Tampermonkey and JavaScript to surface relevant information and make the workflow easier to monitor.",
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+    impact:
+      "The automation significantly reduced missed seller contacts while improving workflow visibility and consistency.",
 
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.12
-  }
-);
+    impactNumber: "89%",
 
-$$(".reveal").forEach((element) => {
-  revealObserver.observe(element);
-});
+    impactLabel: "reduction",
 
+    impactWidth: "89",
 
-/* =========================================
-   ANIMATED IMPACT COUNTERS
-========================================= */
+    tools: [
+      "Tampermonkey",
+      "JavaScript",
+      "Process Analysis",
+      "Automation"
+    ],
 
-const counters = $$(".counter");
+    capabilities: [
+      "Workflow Automation",
+      "Root Cause Analysis",
+      "Process Optimization"
+    ]
 
-const counterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      const element = entry.target;
-
-      const target = Number(element.dataset.target);
-
-      const duration = 1200;
-
-      const startTime = performance.now();
-
-      const animateCounter = (currentTime) => {
-        const progress = Math.min(
-          (currentTime - startTime) / duration,
-          1
-        );
-
-        /*
-          Ease-out animation:
-          starts quickly and slows down naturally.
-        */
-        const easedProgress =
-          1 - Math.pow(1 - progress, 3);
-
-        element.textContent = Math.round(
-          target * easedProgress
-        );
-
-        if (progress < 1) {
-          requestAnimationFrame(animateCounter);
-        }
-      };
-
-      requestAnimationFrame(animateCounter);
-
-      counterObserver.unobserve(element);
-    });
-  },
-  {
-    threshold: 0.7
-  }
-);
-
-counters.forEach((counter) => {
-  counterObserver.observe(counter);
-});
-
-
-/* =========================================
-   PROJECT CASE STUDIES
-========================================= */
-
-const caseStudies = {
-
-  automation: {
-    type: "AUTOMATION · OPERATIONS",
-
-    title: "Missed Contact Automation",
-
-    challenge:
-      "A high-volume operational workflow contained avoidable manual misses that could affect seller-contact execution and create additional follow-up work.",
-
-    approach:
-      "Mapped the repetitive workflow, identified opportunities for lightweight browser automation, and built a Tampermonkey mechanism to provide a reliable guardrail around the process.",
-
-    outcome:
-      "Reduced missed seller contacts by 89%, while simplifying execution for associates and creating a more consistent operating mechanism."
   },
 
 
-  dashboard: {
-    type: "DATA · BUSINESS INTELLIGENCE",
+  "productivity": {
 
-    title: "Operational Productivity Dashboard",
+    number: "PROJECT / 02",
 
-    challenge:
-      "Operational data was spread across multiple inputs and required manual consolidation, making it difficult to quickly identify productivity patterns and improvement opportunities.",
+    type: "ANALYTICS",
 
-    approach:
-      "Used Power Query, Power Pivot and DAX to structure operational data, standardize reporting and surface actionable productivity signals.",
+    eyebrow: "PERFORMANCE ANALYTICS",
 
-    outcome:
-      "Improved associate productivity by 25% and created a reusable mechanism for operational visibility."
+    title: "Productivity Analytics Dashboard",
+
+    description:
+      "Built an analytics dashboard using Power Query, Power Pivot and DAX to improve visibility into associate productivity and performance.",
+
+    metric: "25%",
+
+    metricLabel:
+      "productivity improvement",
+
+    problem:
+      "Performance information was distributed across multiple data sources, making it difficult to quickly identify productivity trends and performance gaps.",
+
+    data:
+      "Consolidated operational performance data and created a structured analytical view using Excel, Power Query, Power Pivot and DAX.",
+
+    analysis:
+      "Analyzed productivity patterns, associate-level performance and operational KPIs to identify areas where process visibility could be improved.",
+
+    solution:
+      "Designed an interactive performance dashboard that transformed raw operational data into actionable KPIs and performance insights.",
+
+    impact:
+      "The dashboard improved performance visibility and contributed to a 25% improvement in associate productivity.",
+
+    impactNumber: "25%",
+
+    impactLabel: "productivity gain",
+
+    impactWidth: "25",
+
+    tools: [
+      "Power Query",
+      "Power Pivot",
+      "DAX",
+      "Excel",
+      "Power BI"
+    ],
+
+    capabilities: [
+      "Data Analytics",
+      "Dashboard Development",
+      "KPI Development"
+    ]
+
   },
 
 
-  audit: {
-    type: "QUALITY · CONTROLS",
+  "image-audit": {
 
-    title: "Image Automation Audit",
+    number: "PROJECT / 03",
 
-    challenge:
-      "Automation-related error patterns required deeper investigation to distinguish process issues from system and execution gaps.",
+    type: "QUALITY",
 
-    approach:
-      "Audited more than 1,200 cases, analyzed error patterns, identified root causes and partnered with relevant stakeholders to strengthen the operating mechanism.",
+    eyebrow: "IMAGE AUTOMATION AUDIT",
 
-    outcome:
-      "Reached 98.2% accuracy post-audit, reduced NRR by approximately 50% and reduced NVA from 8.25% to 4.4% in the referenced initiative."
+    title: "Quality & Root Cause Analysis",
+
+    description:
+      "Audited more than 1,200 cases to identify recurring automation and workflow errors while partnering with Product, Tech, Security and Operations teams.",
+
+    metric: "98.2%",
+
+    metricLabel:
+      "post-audit accuracy",
+
+    problem:
+      "Recurring automation-related errors were creating quality issues, unnecessary work and aging cases.",
+
+    data:
+      "Audited 1,200+ cases over multiple months, focusing on recurring error codes including 5665 and 5461.",
+
+    analysis:
+      "Segmented the cases to identify recurring patterns, error sources and workflow gaps. The analysis helped distinguish process issues from technology and automation issues.",
+
+    solution:
+      "Created a structured audit approach and collaborated with Product, Technology, Security and Operations stakeholders to address the identified failure points.",
+
+    impact:
+      "Achieved 98.2% accuracy after the audit while contributing to a 50.07% reduction in NRR and reducing NVA from 8.25% to 4.4%.",
+
+    impactNumber: "98.2%",
+
+    impactLabel: "audit accuracy",
+
+    impactWidth: "98",
+
+    tools: [
+      "Excel",
+      "Data Analysis",
+      "Quality Audit",
+      "Root Cause Analysis"
+    ],
+
+    capabilities: [
+      "Quality Management",
+      "RCA",
+      "Cross-functional Collaboration"
+    ]
+
   },
 
 
-  training: {
-    type: "TRAINING · LEARNING",
+  "nrr": {
 
-    title: "Specialist Training & Knowledge Transfer",
+    number: "PROJECT / 04",
 
-    challenge:
-      "New and specialist associates needed structured learning, practical application and measurable readiness before moving into production.",
+    type: "PROCESS",
 
-    approach:
-      "Designed and facilitated training, incorporated quizzes and knowledge checks, used quality and productivity signals to identify learning gaps, and partnered with learning and operations stakeholders.",
+    eyebrow: "SELLER APPEAL / BRAND PROTECTION",
 
-    outcome:
-      "Trained more than 118 associates across multiple batches and contributed to specialist knowledge-transfer initiatives."
+    title: "NRR Reduction",
+
+    description:
+      "Used operational data and root-cause analysis to identify drivers of repeat contacts and improve resolution quality across complex seller workflows.",
+
+    metric: "50%",
+
+    metricLabel:
+      "NRR reduction through audit",
+
+    problem:
+      "Repeat contacts were creating additional workload and negatively affecting operational efficiency.",
+
+    data:
+      "Analyzed operational case data, repeat contact patterns, transfer behavior and resolution trends to identify the major drivers of NRR.",
+
+    analysis:
+      "Identified recurring process gaps and opportunities to improve first-time resolution by addressing the underlying reason for repeat contacts.",
+
+    solution:
+      "Used structured root-cause analysis, process optimization and SOP improvements to address recurring failure points.",
+
+    impact:
+      "The initiative contributed to a significant reduction in repeat contacts and improved overall resolution efficiency.",
+
+    impactNumber: "50%",
+
+    impactLabel: "NRR reduction",
+
+    impactWidth: "50",
+
+    tools: [
+      "Excel",
+      "SQL",
+      "Data Analysis",
+      "SOP"
+    ],
+
+    capabilities: [
+      "Root Cause Analysis",
+      "Process Optimization",
+      "Operational Analytics"
+    ]
+
+  },
+
+
+  "training": {
+
+    number: "PROJECT / 05",
+
+    type: "TRAINING",
+
+    eyebrow: "LEARNING & DEVELOPMENT",
+
+    title: "Training Enablement",
+
+    description:
+      "Designed and delivered training across multiple batches, developed SOPs and supported associates through complex operational workflows.",
+
+    metric: "118+",
+
+    metricLabel:
+      "associates trained",
+
+    problem:
+      "Associates needed structured training and practical guidance to perform complex seller support and Brand Protection workflows accurately.",
+
+    data:
+      "Worked with training cohorts, performance metrics, quality results and operational feedback to identify learning gaps.",
+
+    analysis:
+      "Used trainee performance, questions, knowledge gaps and operational observations to adapt training content and improve knowledge transfer.",
+
+    solution:
+      "Designed and delivered classroom training, developed SOPs and knowledge materials, facilitated activities and collaborated with Learning & Development stakeholders.",
+
+    impact:
+      "Trained more than 118 associates across multiple batches while maintaining strong quality and operational performance.",
+
+    impactNumber: "118+",
+
+    impactLabel: "associates trained",
+
+    impactWidth: "88",
+
+    tools: [
+      "Training",
+      "SOP Development",
+      "Facilitation",
+      "Adult Learning"
+    ],
+
+    capabilities: [
+      "Training Delivery",
+      "Knowledge Transfer",
+      "Coaching"
+    ]
+
   }
 
 };
 
 
-/* =========================================
-   PROJECT MODAL
-========================================= */
+/* =========================================================
+   DOM ELEMENTS
+   ========================================================= */
 
-const modal = $("#project-modal");
+const modal = document.getElementById("caseModal");
 
-const modalType = $("#modal-type");
+const modalBackdrop =
+  document.getElementById("modalBackdrop");
 
-const modalTitle = $("#modal-title");
-
-const modalChallenge = $("#modal-challenge");
-
-const modalApproach = $("#modal-approach");
-
-const modalOutcome = $("#modal-outcome");
+const modalClose =
+  document.getElementById("modalClose");
 
 
-$$(".project-card").forEach((card) => {
+/* =========================================================
+   MODAL ELEMENTS
+   ========================================================= */
 
-  const button = card.querySelector(".case-link");
+const caseNumber =
+  document.getElementById("caseNumber");
 
-  button?.addEventListener("click", () => {
+const caseType =
+  document.getElementById("caseType");
 
-    const projectName = card.dataset.project;
+const caseEyebrow =
+  document.getElementById("caseEyebrow");
 
-    const data = caseStudies[projectName];
+const caseTitle =
+  document.getElementById("caseTitle");
 
-    if (!data) return;
+const caseDescription =
+  document.getElementById("caseDescription");
 
-    modalType.textContent = data.type;
+const caseMetric =
+  document.getElementById("caseMetric");
 
-    modalTitle.textContent = data.title;
+const caseMetricLabel =
+  document.getElementById("caseMetricLabel");
 
-    modalChallenge.textContent = data.challenge;
+const caseProblem =
+  document.getElementById("caseProblem");
 
-    modalApproach.textContent = data.approach;
+const caseData =
+  document.getElementById("caseData");
 
-    modalOutcome.textContent = data.outcome;
+const caseAnalysis =
+  document.getElementById("caseAnalysis");
 
-    modal.classList.add("open");
+const caseSolution =
+  document.getElementById("caseSolution");
 
-    modal.setAttribute(
-      "aria-hidden",
-      "false"
+const caseImpact =
+  document.getElementById("caseImpact");
+
+const impactNumber =
+  document.getElementById("impactNumber");
+
+const impactLabel =
+  document.getElementById("impactLabel");
+
+const impactBar =
+  document.getElementById("impactBar");
+
+const caseTools =
+  document.getElementById("caseTools");
+
+const caseCapabilities =
+  document.getElementById("caseCapabilities");
+
+
+/* =========================================================
+   OPEN PROJECT MODAL
+   ========================================================= */
+
+function openProject(projectId) {
+
+  const project = projects[projectId];
+
+  if (!project) {
+
+    console.error(
+      "Project not found:",
+      projectId
     );
 
-    document.body.style.overflow = "hidden";
+    return;
+
+  }
+
+
+  /* ---------------------------------------------
+     BASIC PROJECT INFORMATION
+     --------------------------------------------- */
+
+  caseNumber.textContent =
+    project.number;
+
+  caseType.textContent =
+    project.type;
+
+  caseEyebrow.textContent =
+    project.eyebrow;
+
+  caseTitle.textContent =
+    project.title;
+
+  caseDescription.textContent =
+    project.description;
+
+
+  /* ---------------------------------------------
+     HERO METRIC
+     --------------------------------------------- */
+
+  caseMetric.textContent =
+    project.metric;
+
+  caseMetricLabel.textContent =
+    project.metricLabel;
+
+
+  /* ---------------------------------------------
+     CASE STUDY PROCESS
+     --------------------------------------------- */
+
+  caseProblem.textContent =
+    project.problem;
+
+  caseData.textContent =
+    project.data;
+
+  caseAnalysis.textContent =
+    project.analysis;
+
+  caseSolution.textContent =
+    project.solution;
+
+  caseImpact.textContent =
+    project.impact;
+
+
+  /* ---------------------------------------------
+     IMPACT METRIC
+     --------------------------------------------- */
+
+  impactNumber.textContent =
+    project.impactNumber;
+
+  impactLabel.textContent =
+    project.impactLabel;
+
+
+  /* ---------------------------------------------
+     IMPACT BAR
+     --------------------------------------------- */
+
+  impactBar.style.setProperty(
+    "--impact-width",
+    `${project.impactWidth}%`
+  );
+
+
+  /* ---------------------------------------------
+     TOOLS
+     --------------------------------------------- */
+
+  caseTools.innerHTML = "";
+
+  project.tools.forEach(function(tool) {
+
+    const tag =
+      document.createElement("span");
+
+    tag.textContent = tool;
+
+    caseTools.appendChild(tag);
 
   });
 
-});
+
+  /* ---------------------------------------------
+     CAPABILITIES
+     --------------------------------------------- */
+
+  caseCapabilities.innerHTML = "";
+
+  project.capabilities.forEach(
+    function(capability) {
+
+      const tag =
+        document.createElement("span");
+
+      tag.textContent =
+        capability;
+
+      caseCapabilities.appendChild(tag);
+
+    }
+  );
 
 
-/* =========================================
+  /* ---------------------------------------------
+     SHOW MODAL
+     --------------------------------------------- */
+
+  modal.classList.add("active");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  /* Prevent background scrolling */
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+
+  /* Start animation */
+
+  setTimeout(function() {
+
+    impactBar.classList.add(
+      "animate"
+    );
+
+  }, 250);
+
+}
+
+
+/* =========================================================
    CLOSE PROJECT MODAL
-========================================= */
+   ========================================================= */
 
-$$("[data-close]").forEach((element) => {
+function closeProject() {
 
-  element.addEventListener("click", closeModal);
-
-});
-
-
-document.addEventListener("keydown", (event) => {
-
-  if (event.key === "Escape") {
-    closeModal();
-  }
-
-});
-
-
-function closeModal() {
-
-  if (!modal) return;
-
-  modal.classList.remove("open");
+  modal.classList.remove(
+    "active"
+  );
 
   modal.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  document.body.style.overflow = "";
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+
+  impactBar.classList.remove(
+    "animate"
+  );
 
 }
 
 
-/* =========================================
-   ACTIVE NAVIGATION SECTION
-========================================= */
+/* =========================================================
+   PROJECT BUTTONS
+   ========================================================= */
 
-const sections = $$("main section[id]");
+const projectButtons =
+  document.querySelectorAll(
+    ".showcase-button"
+  );
 
-const navLinks = $$("nav a");
 
-const activeObserver = new IntersectionObserver(
-  (entries) => {
+projectButtons.forEach(
+  function(button) {
 
-    entries.forEach((entry) => {
+    button.addEventListener(
+      "click",
+      function() {
 
-      if (!entry.isIntersecting) return;
+        const projectId =
+          button.getAttribute(
+            "data-project"
+          );
 
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-      });
+        openProject(projectId);
 
-      const activeLink =
-        document.querySelector(
-          `nav a[href="#${entry.target.id}"]`
-        );
+      }
+    );
 
-      activeLink?.classList.add("active");
-
-    });
-
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px"
   }
 );
 
 
-sections.forEach((section) => {
-  activeObserver.observe(section);
-});
+/* =========================================================
+   CLOSE MODAL EVENTS
+   ========================================================= */
+
+if (modalClose) {
+
+  modalClose.addEventListener(
+    "click",
+    closeProject
+  );
+
+}
 
 
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
+if (modalBackdrop) {
 
-$$('a[href^="#"]').forEach((link) => {
+  modalBackdrop.addEventListener(
+    "click",
+    closeProject
+  );
 
-  link.addEventListener("click", (event) => {
+}
 
-    const targetId =
-      link.getAttribute("href");
+
+/* =========================================================
+   ESCAPE KEY
+   ========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
 
     if (
-      !targetId ||
-      targetId === "#"
+      event.key === "Escape" &&
+      modal.classList.contains("active")
     ) {
-      return;
+
+      closeProject();
+
     }
 
-    const target =
-      document.querySelector(targetId);
+  }
+);
 
-    if (!target) return;
 
-    event.preventDefault();
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+const navMenu =
+  document.getElementById(
+    "navMenu"
+  );
+
+const navLinks =
+  document.getElementById(
+    "navLinks"
+  );
+
+
+if (navMenu && navLinks) {
+
+  navMenu.addEventListener(
+    "click",
+    function() {
+
+      navLinks.classList.toggle(
+        "active"
+      );
+
+      navMenu.classList.toggle(
+        "active"
+      );
+
+    }
+  );
+
+
+  /* Close mobile navigation
+     after clicking a link */
+
+  navLinks
+    .querySelectorAll("a")
+    .forEach(function(link) {
+
+      link.addEventListener(
+        "click",
+        function() {
+
+          navLinks.classList.remove(
+            "active"
+          );
+
+          navMenu.classList.remove(
+            "active"
+          );
+
+        }
+      );
+
     });
 
-  });
-
-});
+}
 
 
-/* =========================================
-   PROJECT CARD TILT EFFECT
-========================================= */
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+   ========================================================= */
 
-$$(".project-card").forEach((card) => {
-
-  card.addEventListener("mousemove", (event) => {
-
-    if (window.innerWidth <= 850) return;
-
-    const rect =
-      card.getBoundingClientRect();
-
-    const x =
-      event.clientX - rect.left;
-
-    const y =
-      event.clientY - rect.top;
-
-    const centerX =
-      rect.width / 2;
-
-    const centerY =
-      rect.height / 2;
-
-    const rotateX =
-      ((y - centerY) / centerY) * -2;
-
-    const rotateY =
-      ((x - centerX) / centerX) * 2;
-
-    card.style.transform =
-      `perspective(900px)
-       rotateX(${rotateX}deg)
-       rotateY(${rotateY}deg)
-       translateY(-5px)`;
-
-  });
+const navbar =
+  document.getElementById(
+    "navbar"
+  );
 
 
-  card.addEventListener("mouseleave", () => {
+function updateNavbar() {
 
-    card.style.transform = "";
-
-  });
-
-});
+  if (!navbar) {
+    return;
+  }
 
 
-/* =========================================
-   HERO PROFILE CARD PARALLAX
-========================================= */
+  if (window.scrollY > 40) {
 
-const heroVisual = $(".hero-visual");
+    navbar.classList.add(
+      "scrolled"
+    );
 
-const profileCard =
-  $(".profile-card");
+  } else {
 
-heroVisual?.addEventListener(
-  "mousemove",
-  (event) => {
+    navbar.classList.remove(
+      "scrolled"
+    );
 
-    if (window.innerWidth <= 850) return;
+  }
 
-    const rect =
-      heroVisual.getBoundingClientRect();
+}
 
-    const x =
-      event.clientX - rect.left;
 
-    const y =
-      event.clientY - rect.top;
+window.addEventListener(
+  "scroll",
+  updateNavbar
+);
 
-    const centerX =
-      rect.width / 2;
 
-    const centerY =
-      rect.height / 2;
+updateNavbar();
 
-    const moveX =
-      ((x - centerX) / centerX) * 8;
 
-    const moveY =
-      ((y - centerY) / centerY) * 8;
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+   ========================================================= */
 
-    if (profileCard) {
+const sections =
+  document.querySelectorAll(
+    "section[id]"
+  );
 
-      profileCard.style.transform =
-        `translate(${moveX}px, ${moveY}px)`;
+const navigationLinks =
+  document.querySelectorAll(
+    ".nav-links a"
+  );
+
+
+function updateActiveNavigation() {
+
+  let currentSection = "";
+
+
+  sections.forEach(
+    function(section) {
+
+      const sectionTop =
+        section.offsetTop - 180;
+
+      const sectionHeight =
+        section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY <
+          sectionTop + sectionHeight
+      ) {
+
+        currentSection =
+          section.getAttribute(
+            "id"
+          );
+
+      }
 
     }
+  );
+
+
+  navigationLinks.forEach(
+    function(link) {
+
+      link.classList.remove(
+        "active"
+      );
+
+
+      const href =
+        link.getAttribute(
+          "href"
+        );
+
+
+      if (
+        href === `#${currentSection}`
+      ) {
+
+        link.classList.add(
+          "active"
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  updateActiveNavigation
+);
+
+
+updateActiveNavigation();
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
+const revealElements =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+
+const revealObserver =
+  new IntersectionObserver(
+    function(entries) {
+
+      entries.forEach(
+        function(entry) {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        }
+      );
+
+    },
+    {
+      threshold: 0.12,
+
+      rootMargin:
+        "0px 0px -50px 0px"
+    }
+  );
+
+
+revealElements.forEach(
+  function(element) {
+
+    revealObserver.observe(
+      element
+    );
 
   }
 );
 
 
-heroVisual?.addEventListener(
-  "mouseleave",
-  () => {
+/* =========================================================
+   STAGGER CARD ANIMATIONS
+   ========================================================= */
 
-    if (profileCard) {
-      profileCard.style.transform = "";
-    }
+const cardGroups = [
+  ".skill-card",
+  ".showcase-card",
+  ".recognition-card",
+  ".education-item"
+];
+
+
+cardGroups.forEach(
+  function(selector) {
+
+    const cards =
+      document.querySelectorAll(
+        selector
+      );
+
+
+    cards.forEach(
+      function(card, index) {
+
+        card.style.transitionDelay =
+          `${index * 80}ms`;
+
+      }
+    );
 
   }
 );
 
 
-/* =========================================
-   PAGE LOAD
-========================================= */
+/* =========================================================
+   SMOOTH SCROLL
+   ========================================================= */
 
-window.addEventListener("load", () => {
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(
+    function(anchor) {
 
-  document.body.classList.add("loaded");
+      anchor.addEventListener(
+        "click",
+        function(event) {
 
-});
+          const targetId =
+            anchor.getAttribute(
+              "href"
+            );
 
 
-/* =========================================
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+
+            return;
+
+          }
+
+
+          const target =
+            document.querySelector(
+              targetId
+            );
+
+
+          if (!target) {
+
+            return;
+
+          }
+
+
+          event.preventDefault();
+
+
+          const navbarHeight =
+            navbar
+              ? navbar.offsetHeight
+              : 0;
+
+
+          const targetPosition =
+            target.offsetTop -
+            navbarHeight;
+
+
+          window.scrollTo({
+
+            top: targetPosition,
+
+            behavior: "smooth"
+
+          });
+
+        }
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
+
+const cursorGlow =
+  document.querySelector(
+    ".cursor-glow"
+  );
+
+
+if (cursorGlow) {
+
+  let mouseX = 0;
+
+  let mouseY = 0;
+
+  let currentX = 0;
+
+  let currentY = 0;
+
+
+  document.addEventListener(
+    "mousemove",
+    function(event) {
+
+      mouseX =
+        event.clientX;
+
+      mouseY =
+        event.clientY;
+
+    }
+  );
+
+
+  function animateCursor() {
+
+    currentX +=
+      (mouseX - currentX) *
+      0.12;
+
+    currentY +=
+      (mouseY - currentY) *
+      0.12;
+
+
+    cursorGlow.style.transform =
+      `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+
+    requestAnimationFrame(
+      animateCursor
+    );
+
+  }
+
+
+  animateCursor();
+
+}
+
+
+/* =========================================================
+   CARD MOUSE MOVEMENT
+   Subtle interactive tilt
+   ========================================================= */
+
+const interactiveCards =
+  document.querySelectorAll(
+    ".skill-card, .showcase-card"
+  );
+
+
+interactiveCards.forEach(
+  function(card) {
+
+    card.addEventListener(
+      "mousemove",
+      function(event) {
+
+        /* Disable tilt on small screens */
+
+        if (
+          window.innerWidth < 900
+        ) {
+
+          return;
+
+        }
+
+
+        const rect =
+          card.getBoundingClientRect();
+
+
+        const x =
+          event.clientX -
+          rect.left;
+
+
+        const y =
+          event.clientY -
+          rect.top;
+
+
+        const centerX =
+          rect.width / 2;
+
+
+        const centerY =
+          rect.height / 2;
+
+
+        const rotateX =
+          ((y - centerY) /
+            centerY) *
+          -2;
+
+
+        const rotateY =
+          ((x - centerX) /
+            centerX) *
+          2;
+
+
+        card.style.transform =
+          `perspective(1000px)
+           rotateX(${rotateX}deg)
+           rotateY(${rotateY}deg)
+           translateY(-5px)`;
+
+      }
+    );
+
+
+    card.addEventListener(
+      "mouseleave",
+      function() {
+
+        card.style.transform =
+          "";
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================================================
+   HERO PARALLAX
+   ========================================================= */
+
+const heroGrid =
+  document.querySelector(
+    ".hero-grid"
+  );
+
+
+if (heroGrid) {
+
+  window.addEventListener(
+    "scroll",
+    function() {
+
+      const scrollPosition =
+        window.scrollY;
+
+
+      if (
+        scrollPosition <
+        window.innerHeight
+      ) {
+
+        heroGrid.style.transform =
+          `translateY(${scrollPosition * 0.15}px)`;
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   NUMBER COUNTER
+   ========================================================= */
+
+function animateCounter(
+  element,
+  target,
+  suffix = "",
+  duration = 1200
+) {
+
+  if (!element) {
+    return;
+  }
+
+
+  const startTime =
+    performance.now();
+
+
+  function updateCounter(
+    currentTime
+  ) {
+
+    const elapsed =
+      currentTime -
+      startTime;
+
+
+    const progress =
+      Math.min(
+        elapsed / duration,
+        1
+      );
+
+
+    /* Ease out */
+
+    const easedProgress =
+      1 -
+      Math.pow(
+        1 - progress,
+        3
+      );
+
+
+    const currentValue =
+      target *
+      easedProgress;
+
+
+    element.textContent =
+      `${currentValue.toFixed(
+        target % 1 === 0
+          ? 0
+          : 1
+      )}${suffix}`;
+
+
+    if (
+      progress < 1
+    ) {
+
+      requestAnimationFrame(
+        updateCounter
+      );
+
+    }
+
+  }
+
+
+  requestAnimationFrame(
+    updateCounter
+  );
+
+}
+
+
+/* =========================================================
+   INITIALIZE HERO COUNTERS
+   ========================================================= */
+
+let countersStarted = false;
+
+
+const heroSection =
+  document.querySelector(
+    ".hero"
+  );
+
+
+if (heroSection) {
+
+  const counterObserver =
+    new IntersectionObserver(
+      function(entries) {
+
+        entries.forEach(
+          function(entry) {
+
+            if (
+              entry.isIntersecting &&
+              !countersStarted
+            ) {
+
+              countersStarted =
+                true;
+
+
+              const counters =
+                document.querySelectorAll(
+                  ".hero-meta-item strong"
+                );
+
+
+              /* Experience */
+
+              if (counters[0]) {
+
+                animateCounter(
+                  counters[0],
+                  5,
+                  "+"
+                );
+
+              }
+
+
+              /* Associates */
+
+              if (counters[1]) {
+
+                animateCounter(
+                  counters[1],
+                  118,
+                  "+"
+                );
+
+              }
+
+
+              /* Accuracy */
+
+              if (counters[2]) {
+
+                animateCounter(
+                  counters[2],
+                  98.2,
+                  "%"
+                );
+
+              }
+
+
+              /* Productivity */
+
+              if (counters[3]) {
+
+                animateCounter(
+                  counters[3],
+                  25,
+                  "%"
+                );
+
+              }
+
+
+              counterObserver.unobserve(
+                heroSection
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+  counterObserver.observe(
+    heroSection
+  );
+
+}
+
+
+/* =========================================================
+   PROJECT HOVER TEXT EFFECT
+   ========================================================= */
+
+const showcaseCards =
+  document.querySelectorAll(
+    ".showcase-card"
+  );
+
+
+showcaseCards.forEach(
+  function(card) {
+
+    card.addEventListener(
+      "mouseenter",
+      function() {
+
+        card.classList.add(
+          "is-hovered"
+        );
+
+      }
+    );
+
+
+    card.addEventListener(
+      "mouseleave",
+      function() {
+
+        card.classList.remove(
+          "is-hovered"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================================================
+   MODAL BODY FOCUS
+   ========================================================= */
+
+function focusModal() {
+
+  if (
+    modal &&
+    modal.classList.contains(
+      "active"
+    )
+  ) {
+
+    setTimeout(
+      function() {
+
+        if (modalClose) {
+
+          modalClose.focus();
+
+        }
+
+      },
+      100
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   UPDATE OPEN PROJECT FUNCTION
+   ========================================================= */
+
+const originalOpenProject =
+  openProject;
+
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+   ========================================================= */
+
+const prefersReducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+
+if (
+  prefersReducedMotion.matches
+) {
+
+  document.documentElement.classList.add(
+    "reduce-motion"
+  );
+
+}
+
+
+/* =========================================================
+   IMAGE LAZY LOADING
+   ========================================================= */
+
+document
+  .querySelectorAll(
+    "img"
+  )
+  .forEach(
+    function(image) {
+
+      image.loading =
+        "lazy";
+
+    }
+  );
+
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
+const footer =
+  document.querySelector(
+    ".footer"
+  );
+
+
+if (footer) {
+
+  const year =
+    new Date().getFullYear();
+
+
+  footer.innerHTML =
+    footer.innerHTML.replace(
+      /2026/g,
+      year
+    );
+
+}
+
+
+/* =========================================================
    CONSOLE MESSAGE
-========================================= */
+   ========================================================= */
 
 console.log(
   "%cSayanti Acharjee — Portfolio",
   "font-size:18px;font-weight:bold;"
 );
 
+
 console.log(
-  "Operations × Analytics × Automation"
+  "%cAnalytics × Operations × Impact",
+  "font-size:13px;"
+);
+
+
+/* =========================================================
+   PAGE READY
+   ========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    document.body.classList.add(
+      "page-loaded"
+    );
+
+  }
 );
