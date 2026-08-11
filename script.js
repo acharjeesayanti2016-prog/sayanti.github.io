@@ -1,808 +1,671 @@
 /* =========================================================
-   SAYANTI ACHARJEE PORTFOLIO
-   FINAL JAVASCRIPT
-   ========================================================= */
+   SAYANTI ACHARJEE — PORTFOLIO SCRIPT
+========================================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ================= PROJECT DATA ================= */
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
-const projects = {
+    const body = document.body;
 
-  "missed-contact": {
+    const menuToggle =
+        document.querySelector(".menu-toggle");
 
-    type: "AUTOMATION",
+    const navLinks =
+        document.querySelector(".nav-links");
 
-    title: "Missed Seller Contact Reduction",
+    const modal =
+        document.querySelector(".project-modal");
 
-    description:
-      "Identified repetitive workflow gaps and developed a lightweight automation solution to improve visibility and reduce missed seller contacts.",
+    const modalWindow =
+        document.querySelector(".modal-window");
 
-    metric: "89%",
+    const modalClose =
+        document.querySelector(".modal-close");
 
-    metricLabel: "reduction in missed seller contacts",
+    const modalBackdrop =
+        document.querySelector(".modal-backdrop");
 
-    problem:
-      "Repetitive workflow steps created visibility gaps and increased the likelihood of missed seller contacts.",
+    const projectButtons =
+        document.querySelectorAll(".project-open");
 
-    data:
-      "Reviewed operational patterns, contact workflows and recurring failure points to identify where manual intervention was creating unnecessary risk.",
 
-    analysis:
-      "The analysis showed that repetitive manual workflow steps were contributing to missed actions and that important information needed to be surfaced earlier.",
+    /* =====================================================
+       IMPORTANT:
+       ALWAYS KEEP THE MODAL CLOSED ON PAGE LOAD
+    ===================================================== */
 
-    solution:
-      "Developed a lightweight browser automation workflow using Tampermonkey and JavaScript to surface relevant information and reduce manual effort.",
+    if (modal) {
 
-    impact:
-      "The solution significantly reduced missed seller contacts while improving workflow visibility and consistency.",
+        modal.classList.remove("active");
 
-    impactValue: "89%",
+        modal.setAttribute("aria-hidden", "true");
 
-    impactWidth: "89%",
-
-    tools: [
-      "Tampermonkey",
-      "JavaScript",
-      "Process Analysis",
-      "Automation"
-    ],
-
-    capabilities: [
-      "Workflow Automation",
-      "Root Cause Analysis",
-      "Process Optimization"
-    ]
-
-  },
-
-
-  "productivity": {
-
-    type: "ANALYTICS",
-
-    title: "Productivity Analytics Dashboard",
-
-    description:
-      "Built an analytics dashboard using Power Query, Power Pivot and DAX to improve visibility into associate productivity and performance.",
-
-    metric: "25%",
-
-    metricLabel: "productivity improvement",
-
-    problem:
-      "Performance information was distributed across multiple data sources, making it difficult to quickly identify productivity trends and performance gaps.",
-
-    data:
-      "Consolidated operational performance data and created a structured analytical view using Excel, Power Query, Power Pivot and DAX.",
-
-    analysis:
-      "Analyzed productivity patterns, associate-level performance and operational KPIs to identify areas where process visibility could be improved.",
-
-    solution:
-      "Designed an interactive performance dashboard that transformed raw operational data into actionable KPIs and performance insights.",
-
-    impact:
-      "The dashboard improved performance visibility and contributed to a 25% improvement in associate productivity.",
-
-    impactValue: "25%",
-
-    impactWidth: "25%",
-
-    tools: [
-      "Power Query",
-      "Power Pivot",
-      "DAX",
-      "Excel",
-      "Power BI"
-    ],
-
-    capabilities: [
-      "Data Analytics",
-      "Dashboard Development",
-      "KPI Development"
-    ]
-
-  },
-
-
-  "image-audit": {
-
-    type: "QUALITY",
-
-    title: "Image Automation Audit",
-
-    description:
-      "Audited more than 1,200 cases to identify recurring automation and workflow errors while partnering with Product, Tech, Security and Operations teams.",
-
-    metric: "98.2%",
-
-    metricLabel: "post-audit accuracy",
-
-    problem:
-      "Recurring automation-related errors were creating quality issues, unnecessary work and aging cases.",
-
-    data:
-      "Audited 1,200+ cases over multiple months, focusing on recurring error patterns including 5665 and 5461.",
-
-    analysis:
-      "Segmented cases to identify recurring patterns, error sources and workflow gaps while distinguishing process issues from technology issues.",
-
-    solution:
-      "Created a structured audit approach and collaborated with Product, Technology, Security and Operations stakeholders to address identified failure points.",
-
-    impact:
-      "Achieved 98.2% accuracy after the audit while contributing to a 50.07% reduction in NRR and reducing NVA from 8.25% to 4.4%.",
-
-    impactValue: "98.2%",
-
-    impactWidth: "98%",
-
-    tools: [
-      "Excel",
-      "Data Analysis",
-      "Quality Audit",
-      "RCA"
-    ],
-
-    capabilities: [
-      "Quality Management",
-      "Root Cause Analysis",
-      "Cross-functional Collaboration"
-    ]
-
-  },
-
-
-  "nrr": {
-
-    type: "PROCESS",
-
-    title: "NRR Reduction",
-
-    description:
-      "Used operational data and root-cause analysis to identify drivers of repeat contacts and improve resolution quality across complex seller workflows.",
-
-    metric: "50%",
-
-    metricLabel: "NRR reduction",
-
-    problem:
-      "Repeat contacts were creating additional workload and negatively affecting operational efficiency.",
-
-    data:
-      "Analyzed operational case data, repeat contact patterns, transfer behavior and resolution trends to identify major drivers of NRR.",
-
-    analysis:
-      "Identified recurring process gaps and opportunities to improve first-time resolution by addressing underlying reasons for repeat contacts.",
-
-    solution:
-      "Used structured root-cause analysis, process optimization and SOP improvements to address recurring failure points.",
-
-    impact:
-      "The initiative contributed to a significant reduction in repeat contacts and improved overall resolution efficiency.",
-
-    impactValue: "50%",
-
-    impactWidth: "50%",
-
-    tools: [
-      "Excel",
-      "SQL",
-      "Data Analysis",
-      "SOP"
-    ],
-
-    capabilities: [
-      "Root Cause Analysis",
-      "Process Optimization",
-      "Operational Analytics"
-    ]
-
-  },
-
-
-  "training": {
-
-    type: "TRAINING",
-
-    title: "Training Enablement",
-
-    description:
-      "Designed and delivered training across multiple batches, developed SOPs and supported associates through complex operational workflows.",
-
-    metric: "118+",
-
-    metricLabel: "associates trained",
-
-    problem:
-      "Associates needed structured training and practical guidance to perform complex seller support and Brand Protection workflows accurately.",
-
-    data:
-      "Worked with training cohorts, performance metrics, quality results and operational feedback to identify learning gaps.",
-
-    analysis:
-      "Used trainee performance, questions, knowledge gaps and operational observations to adapt training content and improve knowledge transfer.",
-
-    solution:
-      "Designed and delivered classroom training, developed SOPs and knowledge materials, facilitated activities and collaborated with Learning & Development stakeholders.",
-
-    impact:
-      "Trained more than 118 associates across multiple batches while maintaining strong quality and operational performance.",
-
-    impactValue: "118+",
-
-    impactWidth: "88%",
-
-    tools: [
-      "Training",
-      "SOP Development",
-      "Facilitation",
-      "Adult Learning"
-    ],
-
-    capabilities: [
-      "Training Delivery",
-      "Knowledge Transfer",
-      "Coaching"
-    ]
-
-  }
-
-};
-
-
-/* ================= DOM ================= */
-
-const modal =
-  document.getElementById("caseModal");
-
-const modalClose =
-  document.getElementById("modalClose");
-
-const modalBackdrop =
-  document.getElementById("modalBackdrop");
-
-
-/* ================= MODAL ELEMENTS ================= */
-
-const modalType =
-  document.getElementById("modalType");
-
-const modalTitle =
-  document.getElementById("modalTitle");
-
-const modalDescription =
-  document.getElementById("modalDescription");
-
-const modalMetric =
-  document.getElementById("modalMetric");
-
-const modalMetricLabel =
-  document.getElementById("modalMetricLabel");
-
-const modalProblem =
-  document.getElementById("modalProblem");
-
-const modalData =
-  document.getElementById("modalData");
-
-const modalAnalysis =
-  document.getElementById("modalAnalysis");
-
-const modalSolution =
-  document.getElementById("modalSolution");
-
-const modalImpact =
-  document.getElementById("modalImpact");
-
-const impactValue =
-  document.getElementById("impactValue");
-
-const impactBar =
-  document.getElementById("impactBar");
-
-const modalTools =
-  document.getElementById("modalTools");
-
-const modalCapabilities =
-  document.getElementById("modalCapabilities");
-
-
-/* ================= OPEN MODAL ================= */
-
-function openProject(id) {
-
-  const project = projects[id];
-
-  if (!project) return;
-
-
-  modalType.textContent =
-    project.type;
-
-  modalTitle.textContent =
-    project.title;
-
-  modalDescription.textContent =
-    project.description;
-
-  modalMetric.textContent =
-    project.metric;
-
-  modalMetricLabel.textContent =
-    project.metricLabel;
-
-  modalProblem.textContent =
-    project.problem;
-
-  modalData.textContent =
-    project.data;
-
-  modalAnalysis.textContent =
-    project.analysis;
-
-  modalSolution.textContent =
-    project.solution;
-
-  modalImpact.textContent =
-    project.impact;
-
-  impactValue.textContent =
-    project.impactValue;
-
-
-  /* Tools */
-
-  modalTools.innerHTML = "";
-
-  project.tools.forEach(tool => {
-
-    const span =
-      document.createElement("span");
-
-    span.textContent = tool;
-
-    modalTools.appendChild(span);
-
-  });
-
-
-  /* Capabilities */
-
-  modalCapabilities.innerHTML = "";
-
-  project.capabilities.forEach(item => {
-
-    const span =
-      document.createElement("span");
-
-    span.textContent = item;
-
-    modalCapabilities.appendChild(span);
-
-  });
-
-
-  modal.classList.add("active");
-
-  document.body.classList.add("modal-open");
-
-
-  impactBar.style.width = "0";
-
-
-  setTimeout(() => {
-
-    impactBar.style.width =
-      project.impactWidth;
-
-  }, 200);
-
-}
-
-
-/* ================= CLOSE MODAL ================= */
-
-function closeProject() {
-
-  modal.classList.remove("active");
-
-  document.body.classList.remove("modal-open");
-
-}
-
-
-modalClose.addEventListener(
-  "click",
-  closeProject
-);
-
-
-modalBackdrop.addEventListener(
-  "click",
-  closeProject
-);
-
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (
-      event.key === "Escape" &&
-      modal.classList.contains("active")
-    ) {
-
-      closeProject();
+        body.classList.remove("modal-open");
 
     }
 
-  }
-);
+
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            menuToggle.classList.toggle("active");
+
+        });
 
 
-/* ================= PROJECT BUTTONS ================= */
+        navLinks.querySelectorAll("a").forEach(link => {
 
-document
-  .querySelectorAll(".case-study-btn")
-  .forEach(button => {
+            link.addEventListener("click", () => {
 
-    button.addEventListener(
-      "click",
-      () => {
+                navLinks.classList.remove("active");
 
-        openProject(
-          button.dataset.project
-        );
+                menuToggle.classList.remove("active");
 
-      }
-    );
+            });
 
-  });
-
-
-/* ================= MOBILE MENU ================= */
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const navLinks =
-  document.getElementById("navLinks");
-
-
-menuBtn.addEventListener(
-  "click",
-  () => {
-
-    navLinks.classList.toggle("active");
-
-  }
-);
-
-
-navLinks
-  .querySelectorAll("a")
-  .forEach(link => {
-
-    link.addEventListener(
-      "click",
-      () => {
-
-        navLinks.classList.remove("active");
-
-      }
-    );
-
-  });
-
-
-/* ================= NAVBAR ================= */
-
-const navbar =
-  document.getElementById("navbar");
-
-
-window.addEventListener(
-  "scroll",
-  () => {
-
-    if (window.scrollY > 50) {
-
-      navbar.classList.add("scrolled");
-
-    } else {
-
-      navbar.classList.remove("scrolled");
+        });
 
     }
 
-  }
-);
+
+    /* =====================================================
+       CLOSE MODAL
+    ===================================================== */
+
+    function closeModal() {
+
+        if (!modal) return;
+
+        modal.classList.remove("active");
+
+        modal.setAttribute("aria-hidden", "true");
+
+        body.classList.remove("modal-open");
+
+    }
 
 
-/* ================= SCROLL REVEAL ================= */
+    /* =====================================================
+       OPEN MODAL
+    ===================================================== */
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+    function openModal(button) {
+
+        if (!modal) return;
+
+        const project =
+            button.getAttribute("data-project");
+
+        populateModal(project);
+
+        modal.classList.add("active");
+
+        modal.setAttribute("aria-hidden", "false");
+
+        body.classList.add("modal-open");
+
+    }
 
 
-const revealObserver =
-  new IntersectionObserver(
-    entries => {
+    /* =====================================================
+       PROJECT MODAL CONTENT
+    ===================================================== */
 
-      entries.forEach(entry => {
+    function populateModal(project) {
 
-        if (entry.isIntersecting) {
+        const modalLabel =
+            modal.querySelector(".modal-header span");
 
-          entry.target.classList.add(
-            "visible"
-          );
+        const modalTitle =
+            modal.querySelector(".modal-header h2");
 
-          revealObserver.unobserve(
-            entry.target
-          );
+        const caseBlocks =
+            modal.querySelectorAll(".case-block");
+
+        const metrics =
+            modal.querySelectorAll(".case-metric");
+
+
+        /*
+         * DEFAULT PROJECT
+         */
+
+        let data = {
+
+            label: "CASE STUDY",
+
+            title: "Project",
+
+            problem:
+                "An operational challenge requiring structured analysis and process improvement.",
+
+            data:
+                "Collected and analyzed operational data to identify patterns, gaps, and root causes.",
+
+            analysis:
+                "Used analytics, process mapping, and stakeholder inputs to determine the highest-impact intervention points.",
+
+            solution:
+                "Designed a scalable solution combining automation, process optimization, reporting, and stakeholder collaboration.",
+
+            impact:
+                "Created measurable improvements in operational performance, efficiency, and quality.",
+
+            metrics: [
+                ["89%", "Missed contacts reduced"],
+                ["25%", "Productivity improvement"],
+                ["50%", "NRR reduction"]
+            ]
+
+        };
+
+
+        /* =================================================
+           PROJECT 1 — AUTOMATION
+        ================================================= */
+
+        if (
+            project === "automation" ||
+            project === "tampermonkey"
+        ) {
+
+            data = {
+
+                label: "AUTOMATION • AMAZON",
+
+                title: "Contact Automation",
+
+                problem:
+                    "A recurring operational process was creating unnecessary missed seller contacts and manual effort.",
+
+                data:
+                    "Reviewed process behavior and operational contact patterns to identify where contacts were being missed.",
+
+                analysis:
+                    "Root-cause analysis showed that repetitive manual steps were creating avoidable delays and missed actions.",
+
+                solution:
+                    "Built a Tampermonkey-based automation solution to streamline the workflow and surface relevant actions directly within the operational environment.",
+
+                impact:
+                    "The solution significantly reduced missed seller contacts while improving workflow efficiency.",
+
+                metrics: [
+                    ["89%", "Missed contacts reduction"],
+                    ["↓", "Manual effort"],
+                    ["↑", "Workflow efficiency"]
+                ]
+
+            };
 
         }
 
-      });
 
-    },
-    {
-      threshold: .12
-    }
-  );
+        /* =================================================
+           PROJECT 2 — DASHBOARD
+        ================================================= */
 
-
-revealElements.forEach(element => {
-
-  revealObserver.observe(element);
-
-});
-
-
-/* ================= ACTIVE NAV ================= */
-
-const sections =
-  document.querySelectorAll("section[id]");
-
-const navItems =
-  document.querySelectorAll(".nav-links a");
-
-
-window.addEventListener(
-  "scroll",
-  () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-      const top =
-        section.offsetTop - 180;
-
-      if (
-        window.scrollY >= top
-      ) {
-
-        current =
-          section.id;
-
-      }
-
-    });
-
-
-    navItems.forEach(link => {
-
-      link.classList.remove("active");
-
-      if (
-        link.getAttribute("href") ===
-        `#${current}`
-      ) {
-
-        link.classList.add("active");
-
-      }
-
-    });
-
-  }
-);
-
-
-/* ================= HERO COUNTERS ================= */
-
-let countersStarted = false;
-
-const hero =
-  document.querySelector(".hero");
-
-
-const counterObserver =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (
-          entry.isIntersecting &&
-          !countersStarted
+        else if (
+            project === "dashboard" ||
+            project === "analytics"
         ) {
 
-          countersStarted = true;
+            data = {
 
-          document
-            .querySelectorAll(
-              ".hero-stats strong"
-            )
-            .forEach(element => {
+                label: "ANALYTICS • BI",
 
-              const original =
-                element.textContent;
+                title: "Operations Dashboard",
 
-              const target =
-                parseFloat(
-                  element.dataset.count
-                );
+                problem:
+                    "Operational teams lacked a consolidated view of productivity and performance drivers.",
 
-              const hasDecimal =
-                original.includes(".");
+                data:
+                    "Combined operational datasets and created structured reporting layers using Excel, Power Query, Power Pivot and DAX.",
 
-              const suffix =
-                original.includes("%")
-                  ? "%"
-                  : "+";
+                analysis:
+                    "Analyzed productivity patterns, performance gaps, and recurring operational bottlenecks.",
 
-              let start = 0;
+                solution:
+                    "Built an interactive analytics dashboard that converted raw operational data into actionable performance insights.",
 
-              const duration = 1000;
+                impact:
+                    "The dashboard improved visibility and enabled faster, data-driven operational decisions.",
 
-              const startTime =
-                performance.now();
+                metrics: [
+                    ["25%", "Productivity improvement"],
+                    ["BI", "Automated reporting"],
+                    ["360°", "Performance visibility"]
+                ]
 
+            };
 
-              function update(time) {
-
-                const progress =
-                  Math.min(
-                    (time - startTime) /
-                    duration,
-                    1
-                  );
+        }
 
 
-                const eased =
-                  1 -
-                  Math.pow(
-                    1 - progress,
-                    3
-                  );
+        /* =================================================
+           PROJECT 3 — NRR
+        ================================================= */
+
+        else if (
+            project === "nrr" ||
+            project === "process"
+        ) {
+
+            data = {
+
+                label: "PROCESS OPTIMIZATION",
+
+                title: "NRR Reduction",
+
+                problem:
+                    "High Not Resolved Rate was affecting operational efficiency and creating avoidable repeat work.",
+
+                data:
+                    "Analyzed operational cases, resolution patterns, transfer behavior and recurring failure points.",
+
+                analysis:
+                    "Identified process gaps and recurring root causes contributing to unresolved cases.",
+
+                solution:
+                    "Developed targeted process improvements, reporting mechanisms and coaching interventions based on the analysis.",
+
+                impact:
+                    "The initiative significantly reduced NRR and improved overall case resolution performance.",
+
+                metrics: [
+                    ["9.45%", "Starting NRR"],
+                    ["4.31%", "Improved NRR"],
+                    ["54%", "Approx. reduction"]
+                ]
+
+            };
+
+        }
 
 
-                const value =
-                  start +
-                  (target - start) *
-                  eased;
+        /* =================================================
+           PROJECT 4 — IMAGE AUDIT
+        ================================================= */
+
+        else if (
+            project === "image" ||
+            project === "audit"
+        ) {
+
+            data = {
+
+                label: "QUALITY • AUDIT",
+
+                title: "Image Automation Audit",
+
+                problem:
+                    "Automation-related errors were contributing to quality issues, NVA and aging operational tickets.",
+
+                data:
+                    "Audited more than 1,200 cases across relevant error codes and analyzed recurring patterns.",
+
+                analysis:
+                    "Segmented errors to identify root causes across process, product and operational layers.",
+
+                solution:
+                    "Partnered with Product, Tech, Security and Operations stakeholders to implement corrective actions.",
+
+                impact:
+                    "Improved accuracy while reducing NRR, NVA and aging tickets.",
+
+                metrics: [
+                    ["1,200+", "Cases audited"],
+                    ["98.2%", "Post-audit accuracy"],
+                    ["50%", "NRR reduction"]
+                ]
+
+            };
+
+        }
 
 
-                element.textContent =
-                  `${hasDecimal
-                    ? value.toFixed(1)
-                    : Math.round(value)
-                  }${suffix}`;
+        /* =================================================
+           UPDATE MODAL
+        ================================================= */
+
+        if (modalLabel) {
+
+            modalLabel.textContent =
+                data.label;
+
+        }
 
 
-                if (progress < 1) {
+        if (modalTitle) {
 
-                  requestAnimationFrame(
-                    update
-                  );
+            modalTitle.textContent =
+                data.title;
+
+        }
+
+
+        /*
+         * Update case-study blocks.
+         *
+         * Expected order:
+         *
+         * 1. Problem
+         * 2. Data
+         * 3. Analysis
+         * 4. Solution
+         * 5. Impact
+         */
+
+        if (caseBlocks.length >= 5) {
+
+            const content = [
+
+                data.problem,
+                data.data,
+                data.analysis,
+                data.solution,
+                data.impact
+
+            ];
+
+            caseBlocks.forEach((block, index) => {
+
+                const paragraph =
+                    block.querySelector("p");
+
+                if (paragraph && content[index]) {
+
+                    paragraph.textContent =
+                        content[index];
 
                 }
-
-              }
-
-
-              requestAnimationFrame(
-                update
-              );
 
             });
 
         }
 
-      });
+
+        /*
+         * Update metrics
+         */
+
+        metrics.forEach((metric, index) => {
+
+            if (!data.metrics[index]) return;
+
+            const value =
+                metric.querySelector("strong");
+
+            const label =
+                metric.querySelector("span");
+
+            if (value) {
+
+                value.textContent =
+                    data.metrics[index][0];
+
+            }
+
+            if (label) {
+
+                label.textContent =
+                    data.metrics[index][1];
+
+            }
+
+        });
 
     }
-  );
 
 
-counterObserver.observe(hero);
+    /* =====================================================
+       PROJECT BUTTONS
+    ===================================================== */
+
+    projectButtons.forEach(button => {
+
+        button.addEventListener("click", event => {
+
+            event.preventDefault();
+
+            openModal(button);
+
+        });
+
+    });
 
 
-/* ================= PROJECT CARD EFFECT ================= */
+    /* =====================================================
+       CLOSE BUTTON
+    ===================================================== */
 
-document
-  .querySelectorAll(".project-card")
-  .forEach(card => {
+    if (modalClose) {
 
-    card.addEventListener(
-      "mousemove",
-      event => {
+        modalClose.addEventListener("click", () => {
 
-        if (window.innerWidth < 900)
-          return;
+            closeModal();
 
+        });
 
-        const rect =
-          card.getBoundingClientRect();
-
-        const x =
-          event.clientX - rect.left;
-
-        const y =
-          event.clientY - rect.top;
-
-        const rotateY =
-          ((x - rect.width / 2) /
-            rect.width) * 3;
-
-        const rotateX =
-          ((y - rect.height / 2) /
-            rect.height) * -3;
+    }
 
 
-        card.style.transform =
-          `perspective(1200px)
-           rotateX(${rotateX}deg)
-           rotateY(${rotateY}deg)
-           translateY(-6px)`;
+    /* =====================================================
+       CLOSE WHEN CLICKING BACKDROP
+    ===================================================== */
 
-      }
-    );
+    if (modalBackdrop) {
 
+        modalBackdrop.addEventListener("click", () => {
 
-    card.addEventListener(
-      "mouseleave",
-      () => {
+            closeModal();
 
-        card.style.transform = "";
+        });
 
-      }
-    );
-
-  });
+    }
 
 
-/* ================= KEYBOARD ACCESSIBILITY ================= */
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
 
-document.addEventListener(
-  "keydown",
-  event => {
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            closeModal();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       PREVENT MODAL WINDOW CLICK FROM CLOSING
+    ===================================================== */
+
+    if (modalWindow) {
+
+        modalWindow.addEventListener("click", event => {
+
+            event.stopPropagation();
+
+        });
+
+    }
+
+
+    /* =====================================================
+       NAVIGATION ACTIVE STATE
+    ===================================================== */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navItems =
+        document.querySelectorAll(".nav-links a");
+
 
     if (
-      event.key === "Escape" &&
-      navLinks.classList.contains("active")
+        sections.length &&
+        navItems.length
     ) {
 
-      navLinks.classList.remove("active");
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                let current = "";
+
+                sections.forEach(section => {
+
+                    const sectionTop =
+                        section.offsetTop - 160;
+
+                    if (
+                        window.scrollY >=
+                        sectionTop
+                    ) {
+
+                        current =
+                            section.getAttribute("id");
+
+                    }
+
+                });
+
+
+                navItems.forEach(link => {
+
+                    link.classList.remove("active");
+
+                    const href =
+                        link.getAttribute("href");
+
+                    if (
+                        href === `#${current}`
+                    ) {
+
+                        link.classList.add("active");
+
+                    }
+
+                });
+
+            }
+        );
 
     }
 
-  }
-);
+
+    /* =====================================================
+       REVEAL OBSERVER
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-/* ================= PAGE READY ================= */
+    if (
+        revealElements.length &&
+        "IntersectionObserver" in window
+    ) {
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
-    document.body.classList.add(
-      "page-loaded"
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       BUTTON HOVER MICRO-INTERACTION
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".button, .contact-button"
+        )
+        .forEach(button => {
+
+            button.addEventListener(
+                "mousemove",
+                event => {
+
+                    const rect =
+                        button.getBoundingClientRect();
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+                    button.style.setProperty(
+                        "--mouse-x",
+                        `${x}px`
+                    );
+
+                    button.style.setProperty(
+                        "--mouse-y",
+                        `${y}px`
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       PAGE LOADED
+    ===================================================== */
+
+    console.log(
+        "Sayanti Portfolio loaded successfully."
     );
 
-  }
-);
+});
