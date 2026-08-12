@@ -1,11 +1,11 @@
 /* =========================================================
-   SAYANTI ACHARJEE — PORTFOLIO
-   COMPLETE SCRIPT
+   SAYANTI ACHARJEE — PORTFOLIO SCRIPT
+   COMPLETE VERSION
 ========================================================= */
 
 
 /* =========================================================
-   ASSET PATH
+   ASSET HELPER
 ========================================================= */
 
 const ASSET = (filename) =>
@@ -13,7 +13,7 @@ const ASSET = (filename) =>
 
 
 /* =========================================================
-   MAIN PROJECTS
+   PROJECT DATA
 ========================================================= */
 
 const projects = [
@@ -458,10 +458,7 @@ const dashboards = [
             "NRR reduced from 8.45% to 5.00%.",
             "Aging tickets reduced by 77%.",
             "NVA reduced from 8.25% to 4.40%."
-        ],
-
-        implementation:
-            "The project involved structured audit analysis, defect categorization and dashboard-based visualization of operational quality indicators."
+        ]
     },
 
 
@@ -580,23 +577,16 @@ const dashboards = [
 
 
 /* =========================================================
-   COO MONTHLY IMPACT INITIATIVES
+   COO MONTHLY INITIATIVES
 ========================================================= */
 
 const monthlyInitiatives = [
 
     {
         month: "JULY 2025",
-
-        title:
-            "GTIN Exemption Auto-Selection Enhancement",
-
-        summary:
-            "Enhancement to improve GTIN exemption handling and reduce processing effort.",
-
-        impact:
-            "Up to 75% proposed processing-time reduction.",
-
+        title: "GTIN Exemption Auto-Selection Enhancement",
+        summary: "Enhancement to improve GTIN exemption handling and reduce processing effort.",
+        impact: "Up to 75% proposed processing-time reduction.",
         details: [
             "GTIN Exemption Auto-Selection enhancement.",
             "Focused on reducing manual processing effort.",
@@ -604,19 +594,11 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "AUGUST 2025",
-
-        title:
-            "SWO Completion Enforcement Tool",
-
-        summary:
-            "Tampermonkey-based operational enhancement focused on SWO completion enforcement.",
-
-        impact:
-            "108 bps quality improvement.",
-
+        title: "SWO Completion Enforcement Tool",
+        summary: "Tampermonkey-based operational enhancement focused on SWO completion enforcement.",
+        impact: "108 bps quality improvement.",
         details: [
             "SWO Completion Enforcement Tool using Tampermonkey.",
             "Focused on improving completion compliance.",
@@ -624,19 +606,11 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "OCTOBER 2025",
-
-        title:
-            "Mandatory Case ID Implementation",
-
-        summary:
-            "Mandatory Case ID implementation to improve operational tracking and reduce NVA.",
-
-        impact:
-            "318 bps T4 NVA reduction.",
-
+        title: "Mandatory Case ID Implementation",
+        summary: "Mandatory Case ID implementation to improve operational tracking and reduce NVA.",
+        impact: "318 bps T4 NVA reduction.",
         details: [
             "Mandatory Case ID implementation.",
             "Focused on improving case-level tracking.",
@@ -644,57 +618,33 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "NOVEMBER 2025",
-
-        title:
-            "Language Transfer & Account Health Optimization",
-
-        summary:
-            "Two operational initiatives focused on reducing unnecessary transfers.",
-
-        impact:
-            "203 bps + 214 bps annual impact.",
-
+        title: "Language Transfer & Account Health Optimization",
+        summary: "Two operational initiatives focused on reducing unnecessary transfers.",
+        impact: "203 bps + 214 bps annual impact.",
         details: [
             "Language-transfer optimization — 203 bps annual transfer-rate reduction.",
             "Account Health transfer optimization — 214 bps annual impact."
         ]
     },
 
-
     {
         month: "DECEMBER 2025",
-
-        title:
-            "Account Health & Brand Mismatch Optimization",
-
-        summary:
-            "Process improvements focused on transfer and NVA reduction.",
-
-        impact:
-            "253 bps transfer reduction + 526 bps NVA improvement.",
-
+        title: "Account Health & Brand Mismatch Optimization",
+        summary: "Process improvements focused on transfer and NVA reduction.",
+        impact: "253 bps transfer reduction + 526 bps NVA improvement.",
         details: [
             "Account Health optimization — 253 bps transfer-rate reduction.",
             "Brand Mismatch NVA reduction — 526 bps."
         ]
     },
 
-
     {
         month: "JANUARY 2026",
-
-        title:
-            "Duplicate ASIN Replication Fix",
-
-        summary:
-            "Process correction addressing duplicate ASIN replication and reopen-rate impact.",
-
-        impact:
-            "Ticket reopen rate 11.85% → 0%.",
-
+        title: "Duplicate ASIN Replication Fix",
+        summary: "Process correction addressing duplicate ASIN replication and reopen-rate impact.",
+        impact: "Ticket reopen rate 11.85% → 0%.",
         details: [
             "Duplicate ASIN replication fix.",
             "Ticket reopen rate reduced from 11.85% to 0%.",
@@ -702,57 +652,33 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "FEBRUARY 2026",
-
-        title:
-            "PWF Automation Correction & BP Worklog Launch",
-
-        summary:
-            "Two initiatives improving BNA quality and workflow execution.",
-
-        impact:
-            "781 bps NRR improvement + 480 bps quality improvement.",
-
+        title: "PWF Automation Correction & BP Worklog Launch",
+        summary: "Two initiatives improving BNA quality and workflow execution.",
+        impact: "781 bps NRR improvement + 480 bps quality improvement.",
         details: [
             "PWF automation correction — 781 bps BNA NRR improvement.",
             "Revamped BP Worklog launch — 480 bps quality improvement."
         ]
     },
 
-
     {
         month: "MARCH 2026",
-
-        title:
-            "Match Only Migration & BNA Approval-Blurb Correction",
-
-        summary:
-            "Operational corrections focused on reopen and quality improvements.",
-
-        impact:
-            "628 bps reopen reduction + 134 bps quality improvement.",
-
+        title: "Match Only Migration & BNA Approval-Blurb Correction",
+        summary: "Operational corrections focused on reopen and quality improvements.",
+        impact: "628 bps reopen reduction + 134 bps quality improvement.",
         details: [
             "Match Only diagnostic-tool migration — 628 bps E2E reopen reduction.",
             "BNA approval-blurb correction — 134 bps quality improvement."
         ]
     },
 
-
     {
         month: "APRIL 2026",
-
-        title:
-            "GS1 / GTIN Null-UPC SOP Correction",
-
-        summary:
-            "SOP correction focused on IP-infringement closure and reopen outcomes.",
-
-        impact:
-            "47 bps closure improvement + 10 bps reopen reduction.",
-
+        title: "GS1 / GTIN Null-UPC SOP Correction",
+        summary: "SOP correction focused on IP-infringement closure and reopen outcomes.",
+        impact: "47 bps closure improvement + 10 bps reopen reduction.",
         details: [
             "GS1/GTIN null-UPC SOP correction.",
             "47 bps IP-infringement closure improvement.",
@@ -760,19 +686,11 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "MAY 2026",
-
-        title:
-            "CatAuth Escalation Channel & EE Suppression SOP",
-
-        summary:
-            "SOP improvements addressing PAA and suppression workflows.",
-
-        impact:
-            "~202 bps PAA reduction.",
-
+        title: "CatAuth Escalation Channel & EE Suppression SOP",
+        summary: "SOP improvements addressing PAA and suppression workflows.",
+        impact: "~202 bps PAA reduction.",
         details: [
             "CatAuth escalation-channel SOP.",
             "Approximately 202 bps PAA reduction.",
@@ -780,19 +698,11 @@ const monthlyInitiatives = [
         ]
     },
 
-
     {
         month: "JUNE 2026",
-
-        title:
-            "OWN IT / Paragon Case-Handling Improvement",
-
-        summary:
-            "Case-handling quality improvement using OWN IT SOP and communication framework.",
-
-        impact:
-            "258 bps quality + 335 bps CLRO + 523 bps reopen + 217 bps transfer improvement.",
-
+        title: "OWN IT / Paragon Case-Handling Improvement",
+        summary: "Case-handling quality improvement using OWN IT SOP and communication framework.",
+        impact: "258 bps quality + 335 bps CLRO + 523 bps reopen + 217 bps transfer improvement.",
         details: [
             "ABP E2E Paragon Case Handling Quality Improvement via OWN IT SOP & Communication Framework.",
             "258 bps quality improvement.",
@@ -806,7 +716,7 @@ const monthlyInitiatives = [
 
 
 /* =========================================================
-   DOM ELEMENTS
+   DOM REFERENCES
 ========================================================= */
 
 const projectGrid =
@@ -991,7 +901,7 @@ function renderDashboards() {
                                 <div class="dashboard-subtitle">
                                     ${dashboard.subtitle}
                                 </div>
-                              `
+                            `
                             : ""
                     }
 
@@ -1117,13 +1027,15 @@ function closeModal() {
 
 
 /* =========================================================
-   MAIN PROJECT CASE STUDY
+   PROJECT CASE STUDY
 ========================================================= */
 
 function openProjectCaseStudy(id) {
 
     const project =
-        projects.find(item => item.id === id);
+        projects.find(
+            item => item.id === id
+        );
 
     if (!project || !modalContent) {
         return;
@@ -1210,7 +1122,9 @@ function openProjectCaseStudy(id) {
 function openDashboardCaseStudy(id) {
 
     const dashboard =
-        dashboards.find(item => item.id === id);
+        dashboards.find(
+            item => item.id === id
+        );
 
     if (!dashboard || !modalContent) {
         return;
@@ -1236,7 +1150,7 @@ function openDashboardCaseStudy(id) {
                         <div class="case-study-subtitle">
                             ${dashboard.subtitle}
                         </div>
-                      `
+                    `
                     : ""
             }
 
@@ -1310,17 +1224,23 @@ function openDashboardCaseStudy(id) {
             </div>
 
 
-            <div class="case-study-section">
+            ${
+                dashboard.implementation
+                    ? `
+                        <div class="case-study-section">
 
-                <h3>
-                    IMPLEMENTATION
-                </h3>
+                            <h3>
+                                IMPLEMENTATION
+                            </h3>
 
-                <p>
-                    ${dashboard.implementation}
-                </p>
+                            <p>
+                                ${dashboard.implementation}
+                            </p>
 
-            </div>
+                        </div>
+                    `
+                    : ""
+            }
 
         </div>
 
@@ -1331,7 +1251,7 @@ function openDashboardCaseStudy(id) {
 
 
 /* =========================================================
-   MONTHLY INITIATIVE CASE STUDY
+   MONTHLY CASE STUDY
 ========================================================= */
 
 function openMonthlyInitiative(index) {
@@ -1461,7 +1381,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   UNIVERSAL CARD CLICK HANDLER
+   PROJECT / DASHBOARD / MONTH CLICK HANDLER
 ========================================================= */
 
 document.addEventListener(
@@ -1564,224 +1484,134 @@ function observeRevealElements() {
 
 
 /* =========================================================
-   STATS / COUNTERS
-   ---------------------------------------------------------
-   IMPORTANT:
-   If index.html already contains data-target values,
-   those values are used.
+   ⭐ HERO METRIC COUNTERS ⭐
+   
+   THIS IS THE CORRECT VERSION FOR YOUR HTML:
 
-   If not, the established portfolio values are used.
+   <strong data-counter="6">0+</strong>
 ========================================================= */
-
-const defaultStats = {
-    experience: 5,
-    trained: 118,
-    audited: 1200,
-    initiatives: 11
-};
-
-
-function getStatTarget(element) {
-
-    if (element.dataset.target) {
-
-        const value =
-            parseInt(
-                element.dataset.target,
-                10
-            );
-
-        if (!Number.isNaN(value)) {
-            return value;
-        }
-
-    }
-
-
-    const labelElement =
-        element.parentElement
-            ?.querySelector("span");
-
-
-    const label =
-        labelElement
-            ?.textContent
-            ?.trim()
-            ?.toLowerCase() || "";
-
-
-    if (
-        label.includes(
-            "years experience"
-        )
-    ) {
-        return defaultStats.experience;
-    }
-
-
-    if (
-        label.includes(
-            "associates trained"
-        )
-    ) {
-        return defaultStats.trained;
-    }
-
-
-    if (
-        label.includes(
-            "cases audited"
-        )
-    ) {
-        return defaultStats.audited;
-    }
-
-
-    if (
-        label.includes(
-            "major initiatives"
-        )
-    ) {
-        return defaultStats.initiatives;
-    }
-
-
-    return 0;
-}
-
-
-function getStatSuffix(element) {
-
-    if (element.dataset.suffix) {
-        return element.dataset.suffix;
-    }
-
-    return "+";
-}
-
-
-function animateSingleCounter(element) {
-
-    const target =
-        getStatTarget(element);
-
-    const suffix =
-        getStatSuffix(element);
-
-
-    if (target <= 0) {
-        element.textContent = "0+";
-        return;
-    }
-
-
-    const duration = 1600;
-
-    const startTime =
-        performance.now();
-
-
-    function updateCounter(currentTime) {
-
-        const elapsed =
-            currentTime - startTime;
-
-
-        const progress =
-            Math.min(
-                elapsed / duration,
-                1
-            );
-
-
-        const eased =
-            1 -
-            Math.pow(
-                1 - progress,
-                3
-            );
-
-
-        const current =
-            Math.floor(
-                target * eased
-            );
-
-
-        element.textContent =
-            current.toLocaleString("en-IN") +
-            suffix;
-
-
-        if (progress < 1) {
-
-            requestAnimationFrame(
-                updateCounter
-            );
-
-        } else {
-
-            element.textContent =
-                target.toLocaleString("en-IN") +
-                suffix;
-
-        }
-
-    }
-
-
-    requestAnimationFrame(
-        updateCounter
-    );
-}
-
 
 function animateCounters() {
 
     const counters =
         document.querySelectorAll(
-            "[data-target]"
+            "[data-counter]"
         );
 
 
-    /*
-     * If the existing HTML has data-target
-     * attributes, use them.
-     */
-
-    if (counters.length) {
-
-        counters.forEach(
-            animateSingleCounter
-        );
-
+    if (!counters.length) {
         return;
     }
 
 
-    /*
-     * Fallback:
-     * identify the four stat numbers based
-     * on the labels underneath them.
-     */
+    counters.forEach(counter => {
 
-    const statBlocks =
-        document.querySelectorAll(
-            ".stat, .stat-item, .metric, .hero-stat, .counter-item"
-        );
-
-
-    statBlocks.forEach(block => {
-
-        const number =
-            block.querySelector(
-                "strong, h3, .stat-number, .counter"
+        const target =
+            parseInt(
+                counter.getAttribute(
+                    "data-counter"
+                ),
+                10
             );
 
 
-        if (number) {
-            animateSingleCounter(number);
+        if (
+            Number.isNaN(target)
+        ) {
+            return;
         }
+
+
+        /*
+         * Prevent the animation from
+         * running more than once.
+         */
+
+        if (
+            counter.dataset.animated === "true"
+        ) {
+            return;
+        }
+
+
+        counter.dataset.animated =
+            "true";
+
+
+        const duration = 1600;
+
+        const startTime =
+            performance.now();
+
+
+        function updateCounter(
+            currentTime
+        ) {
+
+            const elapsed =
+                currentTime -
+                startTime;
+
+
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
+
+
+            /*
+             * Smooth ease-out.
+             */
+
+            const eased =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const current =
+                Math.floor(
+                    target * eased
+                );
+
+
+            counter.textContent =
+                current.toLocaleString(
+                    "en-IN"
+                ) + "+";
+
+
+            if (
+                progress < 1
+            ) {
+
+                requestAnimationFrame(
+                    updateCounter
+                );
+
+            } else {
+
+                /*
+                 * Always finish on
+                 * the exact HTML value.
+                 */
+
+                counter.textContent =
+                    target.toLocaleString(
+                        "en-IN"
+                    ) + "+";
+
+            }
+
+        }
+
+
+        requestAnimationFrame(
+            updateCounter
+        );
 
     });
 
@@ -1789,20 +1619,41 @@ function animateCounters() {
 
 
 /* =========================================================
-   STATS OBSERVER
+   COUNTER OBSERVER
 ========================================================= */
 
 function initializeCounters() {
 
-    const statsSection =
-        document.querySelector(
-            ".stats-section, #stats, .stats"
+    const counters =
+        document.querySelectorAll(
+            "[data-counter]"
         );
 
 
-    if (statsSection) {
+    if (!counters.length) {
+        return;
+    }
 
-        const statsObserver =
+
+    /*
+     * Find the actual hero metrics
+     * section used by your HTML.
+     */
+
+    const metrics =
+        document.querySelector(
+            ".hero-metrics"
+        );
+
+
+    /*
+     * If hero metrics exists,
+     * animate when it enters view.
+     */
+
+    if (metrics) {
+
+        const observer =
             new IntersectionObserver(
                 entries => {
 
@@ -1814,8 +1665,8 @@ function initializeCounters() {
 
                             animateCounters();
 
-                            statsObserver.unobserve(
-                                statsSection
+                            observer.unobserve(
+                                entry.target
                             );
 
                         }
@@ -1824,26 +1675,23 @@ function initializeCounters() {
 
                 },
                 {
-                    threshold: 0.2
+                    threshold: 0.25
                 }
             );
 
 
-        statsObserver.observe(
-            statsSection
+        observer.observe(
+            metrics
         );
+
 
     } else {
 
         /*
-         * Fallback for existing markup
-         * with a different stats section class.
+         * Fallback.
          */
 
-        setTimeout(
-            animateCounters,
-            500
-        );
+        animateCounters();
 
     }
 
@@ -1860,7 +1708,9 @@ const savedTheme =
     );
 
 
-if (savedTheme === "light") {
+if (
+    savedTheme === "light"
+) {
 
     document.body.classList.add(
         "light"
@@ -1960,7 +1810,7 @@ document
 
 
 /* =========================================================
-   CUSTOM MOUSE POINTER + GLOW
+   CUSTOM MOUSE POINTER
 ========================================================= */
 
 if (
@@ -2097,11 +1947,9 @@ if (
                     "cursor-hover"
                 );
 
-
                 cursorRing.classList.add(
                     "cursor-hover"
                 );
-
 
                 cursorGlow.classList.add(
                     "cursor-hover"
@@ -2129,11 +1977,9 @@ if (
                     "cursor-hover"
                 );
 
-
                 cursorRing.classList.remove(
                     "cursor-hover"
                 );
-
 
                 cursorGlow.classList.remove(
                     "cursor-hover"
@@ -2172,7 +2018,7 @@ if (
 
 
 /* =========================================================
-   INITIALIZE EVERYTHING
+   INITIALIZATION
 ========================================================= */
 
 renderProjects();
@@ -2187,35 +2033,16 @@ initializeCounters();
 
 
 /* =========================================================
-   DEBUG
+   CONSOLE CONFIRMATION
 ========================================================= */
 
 console.log(
-    "Sayanti Portfolio initialized."
+    "Sayanti Acharjee Portfolio initialized successfully."
 );
 
-
 console.log(
-    "Dashboard assets:",
-    {
-        imageAudit:
-            ASSET(
-                "Image-Automation-Audit-Dashboard.png"
-            ),
-
-        artemis:
-            ASSET(
-                "Artemis-AutoML-Dashboard.png"
-            ),
-
-        pulse:
-            ASSET(
-                "Pulse-Dashboard.png"
-            ),
-
-        profile:
-            ASSET(
-                "profile.jpg"
-            )
-    }
+    "Hero counters detected:",
+    document.querySelectorAll(
+        "[data-counter]"
+    ).length
 );
