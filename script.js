@@ -540,7 +540,7 @@ const dashboards = [
       "Real-time visibility into mandatory training compliance across RISC IN Ops.",
 
     image:
-      "assets/Pulse-Dashboard.png",
+      "/assets/Pulse-Dashboard.png",
 
     metrics: [
       ["100%", "Completion target"],
@@ -548,6 +548,7 @@ const dashboards = [
       ["L4–L7", "Manager scope"],
       ["Proactive", "Compliance monitoring"]
     ],
+}
 
     overview:
       "Real-time visibility into mandatory training compliance across RISC IN Ops. Enables proactive monitoring, identification of at-risk employees, and span-level reporting to achieve 100% compliance.",
