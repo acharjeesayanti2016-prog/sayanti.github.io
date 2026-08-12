@@ -1033,16 +1033,113 @@ img {
   font-size: 10px;
 }
 
+/* =========================================================
+   PROJECT CASE STUDY BUTTON
+   ========================================================= */
+
 .case-link {
-  white-space: nowrap;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
 
-  color: var(--text);
+    padding: 10px 16px;
 
-  font-size: 12px;
+    background: rgba(157, 124, 255, 0.10) !important;
 
-  font-weight: 700;
+    border: 1px solid rgba(157, 124, 255, 0.55) !important;
+
+    border-radius: 8px;
+
+    color: #d9d2ff !important;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    cursor: pointer;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    position: relative;
+    z-index: 5;
+
+    box-shadow:
+        0 0 0 rgba(157, 124, 255, 0);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
+
+.case-link:hover {
+    background: rgba(157, 124, 255, 0.20) !important;
+
+    border-color: #9d7cff !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 15px rgba(157, 124, 255, 0.30),
+        0 0 30px rgba(157, 124, 255, 0.12);
+
+    transform: translateY(-2px);
+}
+
+
+.case-link:focus {
+    outline: none;
+
+    background: rgba(157, 124, 255, 0.18) !important;
+
+    border-color: #9d7cff !important;
+
+    color: #ffffff !important;
+}
+
+
+.case-link:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MAKE PROJECT CARD ACTION VISIBLE
+   ========================================================= */
+
+.project-card {
+    overflow: visible !important;
+}
+
+
+.project-bottom {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-top: 28px;
+
+    position: relative;
+    z-index: 4;
+}
+
+
+.project-tags {
+    position: relative;
+    z-index: 3;
+}
+
+
+.case-link {
+    flex-shrink: 0;
+}
 
 /* =========================
    DASHBOARDS
