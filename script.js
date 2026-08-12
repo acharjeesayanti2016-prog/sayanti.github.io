@@ -1,20 +1,34 @@
 /* =========================================================
    SAYANTI ACHARJEE — PORTFOLIO
-   Complete interaction + project data + dashboards
-   + COO monthly initiatives
-========================================================= */
+   FRESH SCRIPT
+   ========================================================= */
 
 
 /* =========================================================
-   PROJECTS
+   ASSET HANDLING
+   ---------------------------------------------------------
+   This is deliberately relative to the location of index.html.
+   It works whether GitHub Pages is serving the repository at
+   the domain root or under a repository path.
+========================================================= */
+
+const ASSET = (filename) =>
+  new URL(`assets/${filename}`, document.baseURI).href;
+
+
+/* =========================================================
+   PROJECT DATA
 ========================================================= */
 
 const projects = [
 
   {
     id: "missed-contact",
+
     number: "01",
+
     category: "AUTOMATION",
+
     title: "Missed Seller Contact Automation",
 
     description:
@@ -26,8 +40,6 @@ const projects = [
       "Operations",
       "Process Optimization"
     ],
-
-    featured: true,
 
     overview:
       "Designed and implemented a browser-based automation solution to identify and reduce missed seller contacts within the operational workflow.",
@@ -54,7 +66,7 @@ const projects = [
 
     metrics: [
       ["89%", "Reduction in missed contacts"],
-      ["Automation", "Tampermonkey framework"],
+      ["Tampermonkey", "Automation framework"],
       ["Operational", "Workflow improvement"],
       ["Scalable", "Solution design"]
     ]
@@ -63,7 +75,9 @@ const projects = [
 
   {
     id: "productivity-dashboard",
+
     number: "02",
+
     category: "BUSINESS INTELLIGENCE",
 
     title: "Operational Productivity Dashboard",
@@ -113,287 +127,296 @@ const projects = [
 
   {
     id: "aging-report",
+
     number: "03",
+
     category: "AUTOMATION & ANALYTICS",
 
-    title: "Aging Report Ticket Analysis Tool",
+    title: "Aging Report",
 
     description:
-      "Automated ticket-aging analysis by consolidating API sources, queue information and manager hierarchy into a centralized operational reporting workflow.",
+      "Ticket analytics tool providing real-time visibility into ticket aging patterns across the organization.",
 
     tags: [
-      "Automation",
-      "APIs",
-      "Data Extraction",
-      "Reporting",
-      "Operations"
+      "React",
+      "Chrome Extension",
+      "AG Grid",
+      "Python Flask",
+      "GraphQL"
     ],
 
     overview:
-      "Built an automated ticket-aging analysis workflow that consolidated multiple API sources, queue information and management hierarchy to improve operational visibility.",
+      "Ticket analytics tool providing real-time visibility into ticket aging patterns across the organization. Transforms raw ticketing data into actionable insights through interactive visualizations and smart filtering based on ticket creation date.",
 
     problem: [
-      "Ticket-aging information was distributed across multiple sources.",
-      "Manual consolidation created significant reporting effort.",
-      "Managers lacked a centralized view across queues and organizational structures.",
-      "Manual tracking made it difficult to identify aging tickets quickly."
+      "Ticket-aging information required consolidated visibility.",
+      "Operational teams needed to understand ticket distribution across aging buckets.",
+      "Multiple dimensions such as program, region, status, manager and ticket type needed to be analyzed together."
     ],
 
     solution: [
-      "Integrated three API sources covering NA, EU and FE.",
-      "Consolidated information across 150+ queues.",
-      "Enriched reporting with manager hierarchy information.",
-      "Created smart filtering capabilities.",
-      "Automated reporting distribution.",
-      "Reduced spreadsheet-based tracking."
+      "Real-Time Ticket Aging: Visualizes ticket distribution across age buckets (0-7d, 7-14d, 14-30d, 30+d).",
+      "Multi-Dimensional Filtering: Filter by program, region, status, manager, and ticket type.",
+      "Saved Filter Presets: Store and recall frequently used filter combinations.",
+      "Integrated multiple data sources for centralized operational analysis."
     ],
 
     impact: [
-      "Reduced aging-report preparation from hours to seconds.",
-      "Improved consolidated ticket visibility.",
-      "Reduced manual reporting effort.",
-      "Enabled faster operational intervention on aging tickets."
+      "3 API data sources.",
+      "NA/EU/FE regional coverage.",
+      "150+ queues covered.",
+      "Improved real-time visibility into ticket aging."
     ],
 
     metrics: [
-      ["150+", "Queues consolidated"],
-      ["3", "API sources"],
-      ["Seconds", "Report generation"],
-      ["Automated", "Distribution"]
-    ]
-  },
-
-
-  {
-    id: "artemis-rapid",
-    number: "04",
-    category: "PRODUCTIVITY AUTOMATION",
-
-    title: "Artemis Rapid Input Assistant",
-
-    description:
-      "Created an operational productivity tool designed to simplify repetitive Artemis input workflows.",
-
-    tags: [
-      "Automation",
-      "Tampermonkey",
-      "Productivity",
-      "Workflow"
-    ],
-
-    overview:
-      "Developed a productivity-focused tool to simplify repetitive Artemis input activities and reduce unnecessary manual effort.",
-
-    problem: [
-      "Repeated Artemis input activities required manual intervention.",
-      "Repetitive workflow steps increased processing effort.",
-      "The existing workflow could be streamlined through browser-based automation."
-    ],
-
-    solution: [
-      "Designed a browser-based input assistant.",
-      "Automated repetitive workflow interactions.",
-      "Simplified the operational input experience.",
-      "Focused the tool on usability and speed."
-    ],
-
-    impact: [
-      "Reduced repetitive manual input.",
-      "Improved workflow efficiency.",
-      "Created a reusable productivity mechanism."
-    ],
-
-    metrics: [
-      ["Automation", "Browser-based"],
-      ["Productivity", "Workflow improvement"],
-      ["Reusable", "Tool design"],
-      ["Operational", "Efficiency"]
-    ]
-  },
-
-
-  {
-    id: "glance",
-    number: "05",
-    category: "COMPLIANCE & NOTIFICATION",
-
-    title: "GLANCE — GL Assessment & Notification Compliance Extension",
-
-    description:
-      "Developed a compliance-focused extension to support assessment and notification workflows.",
-
-    tags: [
-      "Compliance",
-      "Automation",
-      "Notifications",
-      "Workflow"
-    ],
-
-    overview:
-      "Designed a workflow extension focused on assessment and notification compliance.",
-
-    problem: [
-      "Compliance-related assessment and notification activities required consistent execution.",
-      "Manual checks could create gaps in timely action."
-    ],
-
-    solution: [
-      "Developed a workflow extension.",
-      "Supported assessment checks.",
-      "Improved notification visibility.",
-      "Created a repeatable compliance workflow."
-    ],
-
-    impact: [
-      "Improved compliance workflow consistency.",
-      "Reduced manual checking effort.",
-      "Supported timely notification actions."
-    ],
-
-    metrics: [
-      ["Compliance", "Workflow support"],
-      ["Automation", "Process enhancement"],
-      ["Notifications", "Improved visibility"],
-      ["Repeatable", "Workflow"]
+      ["3", "Data sources"],
+      ["NA/EU/FE", "Regions"],
+      ["150+", "Queues"],
+      ["Real-time", "Ticket visibility"]
     ]
   },
 
 
   {
     id: "ppx",
-    number: "06",
-    category: "PREDICTIVE ANALYTICS",
 
-    title: "PPX — Positive Predictive Xpert",
+    number: "04",
+
+    category: "AI / QUALITY ASSURANCE",
+
+    title: "PPX",
 
     description:
-      "Analytics-focused predictive initiative designed to support proactive operational decision-making.",
+      "Positive Predictive Xpert — AI-powered quality assurance tool designed to validate classification accuracy before classes go live.",
 
     tags: [
-      "Predictive Analytics",
-      "Data Science",
-      "Operations",
-      "Insights"
+      "Amazon Bedrock",
+      "Claude AI",
+      "React",
+      "Quality Assurance"
     ],
 
     overview:
-      "Developed a predictive analytics concept focused on using available operational information to support proactive decision-making.",
+      "AI-powered quality assurance tool built on Amazon Bedrock's Claude model that automatically validates classification accuracy before classes go live.",
 
     problem: [
-      "Reactive operational decision-making limited the opportunity for early intervention.",
-      "Historical information could be used more effectively to identify patterns."
+      "Classification accuracy needed to be validated before classes went live.",
+      "Manual sampling created additional effort.",
+      "Comprehensive validation was required across classes."
     ],
 
     solution: [
-      "Applied analytical and predictive thinking to operational data.",
-      "Focused on identifying useful patterns.",
-      "Designed the concept around proactive intervention."
+      "Automated Accuracy Validation: Checks every class against the 97% threshold.",
+      "SOP Compliance: Compares rationale against standard procedures.",
+      "Bulk ASIN Processing: Evaluates multiple ASINs via CRISP export.",
+      "Used AI-powered validation to support quality assurance."
     ],
 
     impact: [
-      "Supported proactive operational thinking.",
-      "Improved visibility into potential patterns.",
-      "Created a framework for predictive operational analysis."
+      "97%+ accuracy threshold.",
+      "100% coverage.",
+      "Prevented escalations through pre-launch validation."
     ],
 
     metrics: [
-      ["Predictive", "Analytical approach"],
-      ["Proactive", "Decision support"],
-      ["Data", "Pattern analysis"],
-      ["Operations", "Business application"]
-    ]
-  },
-
-
-  {
-    id: "scrubex",
-    number: "07",
-    category: "DATA AUTOMATION",
-
-    title: "ScrubEx — Data Extraction Automation Tool",
-
-    description:
-      "Automated data extraction to reduce repetitive manual collection and improve accessibility of operational information.",
-
-    tags: [
-      "Data Extraction",
-      "Automation",
-      "Tampermonkey",
-      "Productivity"
-    ],
-
-    overview:
-      "Developed a data-extraction automation tool to streamline repetitive information collection.",
-
-    problem: [
-      "Manual extraction required repetitive copy-and-paste activities.",
-      "The process consumed operational time.",
-      "Manual extraction created opportunities for inconsistency."
-    ],
-
-    solution: [
-      "Created an automated extraction mechanism.",
-      "Reduced repetitive manual collection.",
-      "Structured extracted information for easier downstream analysis."
-    ],
-
-    impact: [
-      "Reduced manual extraction effort.",
-      "Improved data accessibility.",
-      "Improved consistency of collected information."
-    ],
-
-    metrics: [
-      ["Automation", "Data extraction"],
-      ["Efficiency", "Manual effort reduction"],
-      ["Consistency", "Structured data"],
-      ["Reusable", "Tool"]
+      ["97%+", "Accuracy threshold"],
+      ["100%", "Coverage"],
+      ["Prevented", "Escalations"],
+      ["AI", "Automated validation"]
     ]
   },
 
 
   {
     id: "wrappy",
-    number: "08",
-    category: "WORKFORCE MANAGEMENT",
 
-    title: "Wrappy Class Management Tool",
+    number: "05",
+
+    category: "AUTOMATION",
+
+    title: "Wrappy",
 
     description:
-      "Created a class-management solution designed to simplify operational coordination and tracking.",
+      "Class Management Automation designed to automate wrapper, clone and ROAR class creation in CP-Central.",
 
     tags: [
-      "Workforce",
-      "Automation",
-      "Class Management",
-      "Operations"
+      "JavaScript",
+      "API Development",
+      "Automation"
     ],
 
     overview:
-      "Developed a class-management tool to simplify operational coordination and improve visibility.",
+      "Chrome extension automating wrapper, clone, and ROAR class creation in CP-Central, reducing creation time from minutes to seconds.",
 
     problem: [
-      "Class-related operational coordination required manual tracking.",
-      "Multiple pieces of information needed to be managed consistently."
+      "Class creation involved repetitive manual activities.",
+      "Wrapper and clone creation required repeated workflow steps.",
+      "Manual creation increased processing time."
     ],
 
     solution: [
-      "Created a centralized management mechanism.",
-      "Improved visibility into class information.",
-      "Simplified recurring operational coordination."
+      "Single & Bulk Wrapper Creation.",
+      "Wrapper Naming Generator.",
+      "Progress Dashboard.",
+      "Automated class creation workflow."
     ],
 
     impact: [
-      "Improved class-management efficiency.",
-      "Reduced manual coordination.",
-      "Created a more structured operational workflow."
+      "15–40 seconds per class.",
+      "2.5 minutes for 10-class bulk processing.",
+      "Less than 1% errors."
     ],
 
     metrics: [
-      ["Workflow", "Class management"],
-      ["Automation", "Operational support"],
-      ["Visibility", "Centralized tracking"],
-      ["Efficiency", "Manual effort reduction"]
+      ["15–40s/class", "Creation speed"],
+      ["2.5m/10", "Bulk speed"],
+      ["<1%", "Errors"],
+      ["Automation", "Class creation"]
+    ]
+  },
+
+
+  {
+    id: "aria",
+
+    number: "06",
+
+    category: "PRODUCTIVITY",
+
+    title: "ARIA",
+
+    description:
+      "Artemis Rapid Input Assistant designed to streamline Artemis SOP validation through intuitive decision buttons, bulk processing and smart navigation.",
+
+    tags: [
+      "Chrome Extension",
+      "JavaScript",
+      "Productivity"
+    ],
+
+    overview:
+      "Productivity tool that streamlines Artemis SOP validation through intuitive decision buttons, bulk processing, and smart navigation features.",
+
+    problem: [
+      "Artemis SOP validation required repeated manual interactions.",
+      "Large-scale processing required faster navigation and decision-making.",
+      "Operators needed a more efficient validation workflow."
+    ],
+
+    solution: [
+      "Enhanced Decision Buttons: Context-aware TP/FP buttons.",
+      "Bulk Processing: Mark all for rapid batch decisions.",
+      "Undecided Counter: Tracks unclassified ASINs with auto-jump."
+    ],
+
+    impact: [
+      "+4.26% efficiency.",
+      "200+ users.",
+      "1 minute 40 seconds saved per batch."
+    ],
+
+    metrics: [
+      ["+4.26%", "Efficiency"],
+      ["200+", "Users"],
+      ["1m 40s", "Time saved / batch"],
+      ["Bulk", "Processing"]
+    ]
+  },
+
+
+  {
+    id: "glance",
+
+    number: "07",
+
+    category: "COMPLIANCE",
+
+    title: "GLANCE",
+
+    description:
+      "GL Assessment & Notification Compliance Extension designed to streamline GL verification and compliance checks.",
+
+    tags: [
+      "Chrome Extension",
+      "AWS Lambda",
+      "Amazon S3",
+      "API Development"
+    ],
+
+    overview:
+      "Productivity tool for streamlining GL verification and compliance checks for Rule Writing teams.",
+
+    problem: [
+      "GL compliance validation required structured verification.",
+      "Manual checks increased effort and created opportunities for inconsistency."
+    ],
+
+    solution: [
+      "Automated GL Detection: Validates compliance instantly.",
+      "Visual Notification System: Color-coded feedback.",
+      "Centralized GL Management: Secure AWS S3 storage."
+    ],
+
+    impact: [
+      "0 critical errors.",
+      "3.5 minutes saved per class.",
+      "100% accuracy."
+    ],
+
+    metrics: [
+      ["0", "Critical errors"],
+      ["3.5 min/class", "Time saved"],
+      ["100%", "Accuracy"],
+      ["Automated", "GL validation"]
+    ]
+  },
+
+
+  {
+    id: "scrubex",
+
+    number: "08",
+
+    category: "DATA AUTOMATION",
+
+    title: "ScrubEx",
+
+    description:
+      "Data Extraction Automation Tool designed to streamline Redshift database queries and remove repetitive manual processing.",
+
+    tags: [
+      "Python",
+      "Amazon Redshift",
+      "SQL",
+      "Automation"
+    ],
+
+    overview:
+      "Python-based application that streamlines Redshift database queries, eliminating row limits and complex ODBC configurations.",
+
+    problem: [
+      "Manual data extraction created repetitive effort.",
+      "Database queries involved row limits and configuration complexity.",
+      "Operational users needed simpler access to historical data."
+    ],
+
+    solution: [
+      "Unlimited Data Extraction: Splits large datasets across sheets.",
+      "No ODBC Required: Direct Redshift connection.",
+      "UTC Extraction: Full support for timestamp retrieval."
+    ],
+
+    impact: [
+      "Unlimited row extraction.",
+      "1-click setup.",
+      "UTC-supported data extraction."
+    ],
+
+    metrics: [
+      ["Unlimited", "Row limit"],
+      ["1-Click", "Setup"],
+      ["UTC", "Data support"],
+      ["SQL", "Query automation"]
     ]
   }
 
@@ -401,9 +424,11 @@ const projects = [
 
 
 /* =========================================================
-   DASHBOARDS
-   ONLY THE THREE DASHBOARD IMAGES ARE REFERENCED HERE.
-   SOURCE/DETAIL IMAGES ARE NOT REQUIRED IN ASSETS.
+   DASHBOARD PROJECTS
+   ---------------------------------------------------------
+   IMPORTANT:
+   ONLY the actual dashboard screenshots are referenced.
+   The source/detail images are NOT referenced.
 ========================================================= */
 
 const dashboards = [
@@ -411,19 +436,19 @@ const dashboards = [
   {
     id: "image-audit-dashboard",
 
-    category: "DASHBOARD / AUDIT ANALYTICS",
+    category: "AUDIT ANALYTICS",
 
     title: "Image Automation Audit Dashboard",
 
     description:
-      "Audit intelligence dashboard covering automation accuracy, defect patterns, NRR, NVA and aging-ticket impact.",
+      "Image Automation Audit dashboard covering accuracy, NRR trend, aging reduction, NVA reduction and defect analysis.",
 
     image:
-      "assets/Image-Automation-Audit-Dashboard.png",
+      ASSET("Image-Automation-Audit-Dashboard.png"),
 
     metrics: [
-      ["98.2%", "Automation accuracy"],
-      ["1,200+", "Cases audited"],
+      ["98.2%", "Accuracy rate"],
+      ["1,200", "Audit sample size"],
       ["77%", "Aging reduction"],
       ["8.45% → 5.00%", "NRR trend"]
     ],
@@ -439,7 +464,7 @@ const dashboards = [
     ],
 
     solution: [
-      "Audited 1,200+ cases.",
+      "Audited 1,200 cases.",
       "Reviewed automation output for accuracy.",
       "Analyzed OCR-related errors.",
       "Analyzed metadata-related errors.",
@@ -451,11 +476,10 @@ const dashboards = [
     ],
 
     impact: [
-      "Achieved 98.2% automation accuracy.",
-      "NRR trend reduced from 8.45% to 5.00%.",
-      "Aging tickets reduced by 77%.",
-      "NVA reduced from 8.25% to 4.40%.",
-      "Created improved visibility into automation quality and operational impact."
+      "98.2% accuracy rate.",
+      "NRR reduced from 8.45% to 5.00%.",
+      "77% aging reduction.",
+      "NVA reduced from 8.25% to 4.40%."
     ],
 
     implementation:
@@ -487,13 +511,13 @@ const dashboards = [
       "Fully automated real-time data visualization platform delivering monitoring of Artemis and Auto ML Migration/New Class OTP metrics.",
 
     image:
-      "assets/Artemis-AutoML-Dashboard.png",
+      ASSET("Artemis-AutoML-Dashboard.png"),
 
     metrics: [
-      ["50m/day", "Time saved"],
-      ["Real-time", "Updates"],
-      ["5,400+", "Class conversions"],
-      ["Automated", "Data tracking"]
+      ["5,400+", "Classes"],
+      ["40–50 min", "Daily time saved"],
+      ["Real-time", "Data visibility"],
+      ["Automated", "Data refresh"]
     ],
 
     overview:
@@ -540,7 +564,7 @@ const dashboards = [
       "Real-time visibility into mandatory training compliance across RISC IN Ops.",
 
     image:
-      "/assets/Pulse-Dashboard.png",
+      ASSET("Pulse-Dashboard.png"),
 
     metrics: [
       ["100%", "Completion target"],
@@ -548,7 +572,6 @@ const dashboards = [
       ["L4–L7", "Manager scope"],
       ["Proactive", "Compliance monitoring"]
     ],
-}
 
     overview:
       "Real-time visibility into mandatory training compliance across RISC IN Ops. Enables proactive monitoring, identification of at-risk employees, and span-level reporting to achieve 100% compliance.",
@@ -596,13 +619,10 @@ const monthlyInitiatives = [
   {
     month: "JULY 2025",
     title: "GTIN Exemption Auto-Selection Enhancement",
-
     summary:
       "Enhancement to improve GTIN exemption handling and reduce processing effort.",
-
     impact:
       "Up to 75% proposed processing-time reduction.",
-
     details: [
       "GTIN Exemption Auto-Selection enhancement.",
       "Focused on reducing manual processing effort.",
@@ -610,17 +630,13 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "AUGUST 2025",
     title: "SWO Completion Enforcement Tool",
-
     summary:
       "Tampermonkey-based operational enhancement focused on SWO completion enforcement.",
-
     impact:
       "108 bps quality improvement.",
-
     details: [
       "SWO Completion Enforcement Tool using Tampermonkey.",
       "Focused on improving completion compliance.",
@@ -628,17 +644,13 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "OCTOBER 2025",
     title: "Mandatory Case ID Implementation",
-
     summary:
       "Mandatory Case ID implementation to improve operational tracking and reduce NVA.",
-
     impact:
       "318 bps T4 NVA reduction.",
-
     details: [
       "Mandatory Case ID implementation.",
       "Focused on improving case-level tracking.",
@@ -646,51 +658,39 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "NOVEMBER 2025",
     title: "Language Transfer & Account Health Optimization",
-
     summary:
       "Two operational initiatives focused on reducing unnecessary transfers.",
-
     impact:
       "203 bps + 214 bps annual impact.",
-
     details: [
       "Language-transfer optimization — 203 bps annual transfer-rate reduction.",
       "Account Health transfer optimization — 214 bps annual impact."
     ]
   },
 
-
   {
     month: "DECEMBER 2025",
     title: "Account Health & Brand Mismatch Optimization",
-
     summary:
       "Process improvements focused on transfer and NVA reduction.",
-
     impact:
       "253 bps transfer reduction + 526 bps NVA improvement.",
-
     details: [
       "Account Health optimization — 253 bps transfer-rate reduction.",
       "Brand Mismatch NVA reduction — 526 bps."
     ]
   },
 
-
   {
     month: "JANUARY 2026",
     title: "Duplicate ASIN Replication Fix",
-
     summary:
       "Process correction addressing duplicate ASIN replication and reopen-rate impact.",
-
     impact:
       "Ticket reopen rate 11.85% → 0%.",
-
     details: [
       "Duplicate ASIN replication fix.",
       "Ticket reopen rate reduced from 11.85% to 0%.",
@@ -698,51 +698,39 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "FEBRUARY 2026",
     title: "PWF Automation Correction & BP Worklog Launch",
-
     summary:
       "Two initiatives improving BNA quality and workflow execution.",
-
     impact:
       "781 bps NRR improvement + 480 bps quality improvement.",
-
     details: [
       "PWF automation correction — 781 bps BNA NRR improvement.",
       "Revamped BP Worklog launch — 480 bps quality improvement."
     ]
   },
 
-
   {
     month: "MARCH 2026",
     title: "Match Only Migration & BNA Approval-Blurb Correction",
-
     summary:
       "Operational corrections focused on reopen and quality improvements.",
-
     impact:
       "628 bps reopen reduction + 134 bps quality improvement.",
-
     details: [
       "Match Only diagnostic-tool migration — 628 bps E2E reopen reduction.",
       "BNA approval-blurb correction — 134 bps quality improvement."
     ]
   },
 
-
   {
     month: "APRIL 2026",
     title: "GS1 / GTIN Null-UPC SOP Correction",
-
     summary:
       "SOP correction focused on IP-infringement closure and reopen outcomes.",
-
     impact:
       "47 bps closure improvement + 10 bps reopen reduction.",
-
     details: [
       "GS1/GTIN null-UPC SOP correction.",
       "47 bps IP-infringement closure improvement.",
@@ -750,17 +738,13 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "MAY 2026",
     title: "CatAuth Escalation Channel & EE Suppression SOP",
-
     summary:
       "SOP improvements addressing PAA and suppression workflows.",
-
     impact:
       "~202 bps PAA reduction.",
-
     details: [
       "CatAuth escalation-channel SOP.",
       "Approximately 202 bps PAA reduction.",
@@ -768,17 +752,13 @@ const monthlyInitiatives = [
     ]
   },
 
-
   {
     month: "JUNE 2026",
     title: "OWN IT / Paragon Case-Handling Improvement",
-
     summary:
       "Case-handling quality improvement using OWN IT SOP and communication framework.",
-
     impact:
       "258 bps quality + 335 bps CLRO + 523 bps reopen + 217 bps transfer improvement.",
-
     details: [
       "ABP E2E Paragon Case Handling Quality Improvement via OWN IT SOP & Communication Framework.",
       "258 bps quality improvement.",
@@ -792,7 +772,7 @@ const monthlyInitiatives = [
 
 
 /* =========================================================
-   DOM
+   DOM ELEMENTS
 ========================================================= */
 
 const projectGrid =
@@ -819,12 +799,9 @@ const themeToggle =
 const menuToggle =
   document.getElementById("menuToggle");
 
-const cursorGlow =
-  document.querySelector(".cursor-glow");
-
 
 /* =========================================================
-   HTML HELPERS
+   HELPERS
 ========================================================= */
 
 function listHTML(items) {
@@ -835,11 +812,9 @@ function listHTML(items) {
 
   return `
     <ul class="case-study-list">
-
       ${items.map(item => `
         <li>${item}</li>
       `).join("")}
-
     </ul>
   `;
 }
@@ -855,7 +830,6 @@ function metricsHTML(metrics) {
     <div class="case-study-metrics">
 
       ${metrics.map(metric => `
-
         <div class="case-metric">
 
           <span class="case-metric-value">
@@ -867,7 +841,6 @@ function metricsHTML(metrics) {
           </span>
 
         </div>
-
       `).join("")}
 
     </div>
@@ -886,28 +859,20 @@ function tableHTML(headers, rows) {
 
       <thead>
         <tr>
-
           ${headers.map(header => `
             <th>${header}</th>
           `).join("")}
-
         </tr>
       </thead>
 
       <tbody>
-
         ${rows.map(row => `
-
           <tr>
-
             ${row.map(cell => `
               <td>${cell}</td>
             `).join("")}
-
           </tr>
-
         `).join("")}
-
       </tbody>
 
     </table>
@@ -916,7 +881,7 @@ function tableHTML(headers, rows) {
 
 
 /* =========================================================
-   RENDER PROJECTS
+   PROJECT CARDS
 ========================================================= */
 
 function renderProjects() {
@@ -926,11 +891,7 @@ function renderProjects() {
   projectGrid.innerHTML =
     projects.map(project => `
 
-      <article
-        class="project-card
-        ${project.featured ? "featured" : ""}
-        reveal"
-      >
+      <article class="project-card reveal">
 
         <div>
 
@@ -986,7 +947,7 @@ function renderProjects() {
 
 
 /* =========================================================
-   RENDER DASHBOARDS
+   DASHBOARD CARDS
 ========================================================= */
 
 function renderDashboards() {
@@ -998,12 +959,17 @@ function renderDashboards() {
 
       <article class="dashboard-card reveal">
 
-        <img
-          src="${dashboard.image}"
-          alt="${dashboard.title}"
-          class="dashboard-image"
-          loading="lazy"
-        >
+        <div class="dashboard-image-wrapper">
+
+          <img
+            src="${dashboard.image}"
+            alt="${dashboard.title}"
+            class="dashboard-image"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.classList.add('image-error');"
+          >
+
+        </div>
 
 
         <div class="dashboard-content">
@@ -1023,6 +989,27 @@ function renderDashboards() {
           </p>
 
 
+          <div class="dashboard-metrics">
+
+            ${dashboard.metrics.map(metric => `
+
+              <div>
+
+                <strong>
+                  ${metric[0]}
+                </strong>
+
+                <span>
+                  ${metric[1]}
+                </span>
+
+              </div>
+
+            `).join("")}
+
+          </div>
+
+
           <button
             class="btn btn-secondary dashboard-btn"
             data-dashboard="${dashboard.id}"
@@ -1039,7 +1026,7 @@ function renderDashboards() {
 
 
 /* =========================================================
-   RENDER MONTHLY INITIATIVES
+   MONTHLY COO CARDS
 ========================================================= */
 
 function renderMonthlyInitiatives() {
@@ -1088,15 +1075,17 @@ function renderMonthlyInitiatives() {
 
 
 /* =========================================================
-   PROJECT CASE STUDY
+   OPEN PROJECT CASE STUDY
 ========================================================= */
 
-function openProjectCaseStudy(projectId) {
+function openProjectCaseStudy(id) {
 
   const project =
-    projects.find(item => item.id === projectId);
+    projects.find(item => item.id === id);
 
-  if (!project) return;
+  if (!project || !modal || !modalContent) {
+    return;
+  }
 
 
   modalContent.innerHTML = `
@@ -1174,24 +1163,21 @@ function openProjectCaseStudy(projectId) {
 
 
 /* =========================================================
-   DASHBOARD CASE STUDY
+   OPEN DASHBOARD CASE STUDY
 ========================================================= */
 
-function openDashboardCaseStudy(dashboardId) {
+function openDashboardCaseStudy(id) {
 
   const dashboard =
-    dashboards.find(item => item.id === dashboardId);
+    dashboards.find(item => item.id === id);
 
-  if (!dashboard) return;
+  if (!dashboard || !modal || !modalContent) {
+    return;
+  }
 
 
   let additionalSections = "";
 
-
-  /*
-     Image Automation Audit contains additional
-     analytical tables.
-  */
 
   if (dashboard.id === "image-audit-dashboard") {
 
@@ -1247,7 +1233,6 @@ function openDashboardCaseStudy(dashboardId) {
       </p>
 
 
-      <!-- ONLY THE ACTUAL DASHBOARD IMAGE -->
       <img
         src="${dashboard.image}"
         alt="${dashboard.title}"
@@ -1282,7 +1267,7 @@ function openDashboardCaseStudy(dashboardId) {
       <div class="case-study-section">
 
         <h3>
-          PROBLEM SOLVED
+          PROBLEM
         </h3>
 
         ${listHTML(dashboard.problem)}
@@ -1293,7 +1278,7 @@ function openDashboardCaseStudy(dashboardId) {
       <div class="case-study-section">
 
         <h3>
-          SOLUTION DELIVERED
+          SOLUTION
         </h3>
 
         ${listHTML(dashboard.solution)}
@@ -1304,7 +1289,7 @@ function openDashboardCaseStudy(dashboardId) {
       <div class="case-study-section">
 
         <h3>
-          MEASURABLE IMPACT
+          IMPACT
         </h3>
 
         ${listHTML(dashboard.impact)}
@@ -1315,7 +1300,7 @@ function openDashboardCaseStudy(dashboardId) {
       <div class="case-study-section">
 
         <h3>
-          TECHNICAL IMPLEMENTATION
+          IMPLEMENTATION
         </h3>
 
         <p>
@@ -1336,7 +1321,7 @@ function openDashboardCaseStudy(dashboardId) {
 
 
 /* =========================================================
-   MONTHLY CASE STUDY
+   OPEN MONTHLY INITIATIVE
 ========================================================= */
 
 function openMonthlyInitiative(index) {
@@ -1344,7 +1329,9 @@ function openMonthlyInitiative(index) {
   const item =
     monthlyInitiatives[index];
 
-  if (!item) return;
+  if (!item || !modal || !modalContent) {
+    return;
+  }
 
 
   modalContent.innerHTML = `
@@ -1405,7 +1392,7 @@ function openMonthlyInitiative(index) {
             </span>
 
             <span class="case-metric-label">
-              Reported initiative impact
+              Initiative impact
             </span>
 
           </div>
@@ -1485,7 +1472,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   CLICK HANDLING
+   UNIVERSAL CLICK HANDLER
 ========================================================= */
 
 document.addEventListener(
@@ -1534,87 +1521,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   COUNTERS
-========================================================= */
-
-function animateCounter(element) {
-
-  const target =
-    Number(element.dataset.counter);
-
-  const duration = 1400;
-
-  const start =
-    performance.now();
-
-
-  function update(now) {
-
-    const progress =
-      Math.min(
-        (now - start) / duration,
-        1
-      );
-
-    const eased =
-      1 - Math.pow(1 - progress, 3);
-
-    const current =
-      Math.floor(target * eased);
-
-    element.textContent =
-      `${current}+`;
-
-
-    if (progress < 1) {
-
-      requestAnimationFrame(update);
-
-    }
-
-  }
-
-
-  requestAnimationFrame(update);
-}
-
-
-const counterObserver =
-  new IntersectionObserver(
-    (entries, observer) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          animateCounter(entry.target);
-
-          observer.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.5
-    }
-  );
-
-
-document
-  .querySelectorAll("[data-counter]")
-  .forEach(counter => {
-
-    counterObserver.observe(counter);
-
-  });
-
-
-/* =========================================================
-   REVEAL ANIMATION
+   SCROLL REVEAL
 ========================================================= */
 
 const revealObserver =
@@ -1625,9 +1532,7 @@ const revealObserver =
 
         if (entry.isIntersecting) {
 
-          entry.target.classList.add(
-            "visible"
-          );
+          entry.target.classList.add("visible");
 
           revealObserver.unobserve(
             entry.target
@@ -1658,42 +1563,16 @@ function observeRevealElements() {
 
 
 /* =========================================================
-   CURSOR GLOW
-========================================================= */
-
-if (cursorGlow) {
-
-  window.addEventListener(
-    "mousemove",
-    event => {
-
-      cursorGlow.style.left =
-        `${event.clientX}px`;
-
-      cursorGlow.style.top =
-        `${event.clientY}px`;
-
-    }
-  );
-
-}
-
-
-/* =========================================================
    THEME
 ========================================================= */
 
 const savedTheme =
-  localStorage.getItem(
-    "sayanti-theme"
-  );
+  localStorage.getItem("sayanti-theme");
 
 
 if (savedTheme === "light") {
 
-  document.body.classList.add(
-    "light"
-  );
+  document.body.classList.add("light");
 
 }
 
@@ -1704,15 +1583,11 @@ if (themeToggle) {
     "click",
     () => {
 
-      document.body.classList.toggle(
-        "light"
-      );
+      document.body.classList.toggle("light");
 
 
       const theme =
-        document.body.classList.contains(
-          "light"
-        )
+        document.body.classList.contains("light")
           ? "light"
           : "dark";
 
@@ -1739,9 +1614,7 @@ if (menuToggle) {
     () => {
 
       const nav =
-        document.querySelector(
-          ".nav-links"
-        );
+        document.querySelector(".nav-links");
 
       if (nav) {
 
@@ -1757,10 +1630,6 @@ if (menuToggle) {
 }
 
 
-/* =========================================================
-   CLOSE MOBILE MENU AFTER LINK CLICK
-========================================================= */
-
 document
   .querySelectorAll(".nav-links a")
   .forEach(link => {
@@ -1770,9 +1639,7 @@ document
       () => {
 
         const nav =
-          document.querySelector(
-            ".nav-links"
-          );
+          document.querySelector(".nav-links");
 
         if (nav) {
 
@@ -1802,53 +1669,25 @@ observeRevealElements();
 
 
 /* =========================================================
-   MOBILE NAVIGATION CSS
+   DEBUGGING
+   ---------------------------------------------------------
+   This prints the exact URLs being used for the dashboard
+   images in the browser console.
 ========================================================= */
 
-const mobileMenuStyle =
-  document.createElement("style");
+console.log(
+  "Portfolio assets:",
+  {
+    profile:
+      ASSET("profile.jpg"),
 
+    imageAudit:
+      ASSET("Image-Automation-Audit-Dashboard.png"),
 
-mobileMenuStyle.textContent = `
+    artemis:
+      ASSET("Artemis-AutoML-Dashboard.png"),
 
-  @media (max-width: 950px) {
-
-    .nav-links.mobile-open {
-
-      display: flex;
-
-      position: fixed;
-
-      top: 72px;
-
-      left: 15px;
-
-      right: 15px;
-
-      padding: 20px;
-
-      flex-direction: column;
-
-      align-items: flex-start;
-
-      gap: 16px;
-
-      border-radius: 16px;
-
-      background: rgba(12,16,23,0.97);
-
-      border: 1px solid rgba(255,255,255,0.1);
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,0.5);
-
-    }
-
+    pulse:
+      ASSET("Pulse-Dashboard.png")
   }
-
-`;
-
-
-document.head.appendChild(
-  mobileMenuStyle
 );
